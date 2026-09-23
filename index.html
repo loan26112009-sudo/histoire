@@ -1,0 +1,1088 @@
+<title>Mission Krach 1929</title>
+<meta name="description" content="Révision complète : L’impact de la crise de 1929 – cours, frise, flashcards, quiz, duel à deux et méthode.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#EEF2FA; --card:#FFFFFF; --ink:#16203F; --muted:#56618A; --line:#D8E0F0; --soft:#F6F8FD;
+  --blue:#2A56E0; --blue-soft:#E3EAFE;
+  --red:#E0473F; --red-soft:#FDE7E5;
+  --gold:#F2B124; --gold-soft:#FFF3D6; --gold-ink:#8A5A00;
+  --green:#169C6E; --green-soft:#DDF5EC;
+  --violet:#7A4FD6; --violet-soft:#EEE7FD;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Atkinson Hyperlegible",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --r:14px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;text-wrap:balance;margin:0;letter-spacing:.01em}
+h2{font-size:2.1rem;font-weight:800}
+h3{font-size:1.45rem;font-weight:800}
+p{margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:16px}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)}
+
+/* ticker */
+.ticker{background:var(--ink);color:#fff;overflow:hidden;white-space:nowrap;font-family:var(--mono);font-size:.8rem;padding-block:7px}
+.ticker-track{display:inline-flex;gap:40px;padding-left:100%;animation:tick 45s linear infinite}
+.ticker b{color:var(--gold)} .ticker .dn{color:#FF8A80}
+@keyframes tick{to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion:reduce){.ticker-track{animation:none;padding-left:16px}}
+
+/* header / nav */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(238,242,250,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;gap:6px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav button{flex:0 0 auto;border:1.5px solid var(--line);background:var(--card);padding:8px 14px;border-radius:999px;font-weight:700;font-size:.92rem;white-space:nowrap}
+.nav button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px}
+.brand .logo{font-family:var(--display);font-weight:900;font-size:1.35rem;letter-spacing:.02em;white-space:nowrap}
+.brand .logo span{color:var(--red)}
+.progress-pill{font-size:.8rem;font-weight:700;background:var(--green-soft);color:var(--green);padding:4px 10px;border-radius:999px;white-space:nowrap}
+
+main{padding-block:22px 80px}
+section.tab{display:grid;gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.stack{display:grid;gap:12px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn{border:0;border-radius:12px;padding:11px 18px;font-weight:700;background:var(--ink);color:#fff}
+.btn.alt{background:var(--card);color:var(--ink);border:1.5px solid var(--line)}
+.btn.blue{background:var(--blue)} .btn.red{background:var(--red)} .btn.green{background:var(--green)} .btn.gold{background:var(--gold);color:#3b2600}
+.btn:disabled{opacity:.45;cursor:default}
+.chip{border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font-size:.85rem;font-weight:700}
+.chip[aria-pressed="true"]{background:var(--blue);color:#fff;border-color:var(--blue)}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:3px 8px;border-radius:6px}
+.t-date{background:var(--red-soft);color:var(--red)}
+.t-perso{background:var(--blue-soft);color:var(--blue)}
+.t-notion{background:var(--gold-soft);color:var(--gold-ink)}
+.t-chiffre{background:var(--green-soft);color:var(--green)}
+.t-meca{background:var(--violet-soft);color:var(--violet)}
+
+/* hero */
+.hero{display:grid;gap:18px;grid-template-columns:1.4fr 1fr;align-items:stretch}
+@media (max-width:760px){.hero{grid-template-columns:1fr}}
+.hero-main{background:var(--blue);color:#fff;border-radius:18px;padding:26px;position:relative;overflow:hidden}
+.hero-main h1{font-size:clamp(2.4rem,7vw,3.8rem);font-weight:900;text-transform:uppercase}
+.hero-main h1 em{font-style:normal;color:var(--gold)}
+.hero-main .pb{margin-top:14px;background:rgba(255,255,255,.14);border-radius:12px;padding:12px 14px;font-size:.98rem}
+.hero-main .pb b{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;opacity:.8;margin-bottom:2px}
+.hero-main svg.chart{position:absolute;right:-10px;bottom:-6px;width:55%;opacity:.25;pointer-events:none}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.stat .n{font-family:var(--display);font-size:2.2rem;font-weight:900;line-height:1}
+.stat .l{font-size:.82rem;color:var(--muted);margin-top:4px}
+
+/* film */
+.film{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.scene{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:6px;align-content:start}
+.scene .when{font-family:var(--mono);font-size:.8rem;font-weight:600;color:var(--red)}
+.scene h3{font-size:1.25rem}
+.scene p{font-size:.93rem;color:#2c3659}
+
+/* plan */
+.plan-list{display:grid;gap:10px}
+.step{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.step.done{background:var(--green-soft);border-color:#b5e6d3}
+.step .time{font-family:var(--mono);font-weight:600;font-size:.85rem;background:var(--soft);border-radius:8px;padding:6px 8px;text-align:center;min-width:92px}
+.step h4{margin:0;font-size:1.02rem}
+.step p{font-size:.88rem;color:var(--muted)}
+.step input{width:22px;height:22px;accent-color:var(--green)}
+@media (max-width:560px){.step{grid-template-columns:1fr auto}.step .time{grid-column:1/-1;justify-self:start}}
+.timer{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.timer .clock{font-family:var(--mono);font-size:2.4rem;font-weight:600;font-variant-numeric:tabular-nums}
+
+/* cours */
+details.part{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+details.part>summary{list-style:none;cursor:pointer;padding:16px 20px;display:flex;gap:14px;align-items:center}
+details.part>summary::-webkit-details-marker{display:none}
+details.part>summary .code{font-family:var(--display);font-weight:900;font-size:1.6rem;color:#fff;border-radius:10px;width:54px;height:54px;display:grid;place-items:center;flex:0 0 auto}
+.us .code{background:var(--blue)} .wd .code{background:var(--red)}
+details.part>summary h3{font-size:1.35rem}
+details.part>summary .chev{margin-left:auto;transition:transform .2s;font-size:1.2rem;color:var(--muted)}
+details.part[open]>summary .chev{transform:rotate(180deg)}
+.part-body{padding:0 20px 22px;display:grid;gap:16px}
+.essentiel{background:var(--gold-soft);border-radius:12px;padding:14px 16px}
+.essentiel b.h{display:block;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:4px}
+.part-body ul{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.part-body h4{margin:0 0 6px;font-size:1.05rem}
+.hl{background:linear-gradient(transparent 58%,var(--gold-soft) 58%);font-weight:700}
+.d{font-family:var(--mono);font-weight:600;color:var(--red);font-size:.95em;white-space:nowrap}
+.quote{border-left:4px solid var(--blue);background:var(--blue-soft);padding:10px 14px;border-radius:0 10px 10px 0}
+.quote q{font-style:italic;font-weight:700}
+.fix{border:2px dashed var(--red);border-radius:12px;padding:12px 16px;background:var(--red-soft)}
+.fix b.h{color:var(--red);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:4px}
+.bonus{border-radius:12px;padding:12px 16px;background:var(--violet-soft)}
+.bonus b.h{color:var(--violet);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:4px}
+.flow{display:grid;gap:8px}
+.flow .node{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.93rem}
+.flow .node b{display:block}
+.flow .arr{text-align:center;color:var(--muted);font-weight:700;line-height:1}
+.spiral{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;align-items:stretch;counter-reset:s}
+.spiral .node{background:var(--red-soft);border:1px solid #f5c3be;border-radius:12px;padding:12px;font-size:.88rem;position:relative}
+.spiral .node b{display:block;color:var(--red);margin-bottom:2px}
+.spiral .node:not(:last-child)::after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);font-weight:900;color:var(--red);background:var(--card);border-radius:50%;width:16px;text-align:center;line-height:16px;font-size:.8rem}
+.loop{margin-top:8px;text-align:center;font-weight:700;color:var(--red);font-size:.9rem}
+@media (max-width:700px){.spiral{grid-template-columns:1fr}.spiral .node:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-12px;transform:translateX(-50%)}}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.person{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:12px}
+.person .nm{font-weight:700}
+.person .rl{font-size:.85rem;color:var(--muted)}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+/* frise */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.tl{position:relative;display:grid;gap:10px;padding-left:28px}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:3px;background:var(--line);border-radius:3px}
+.ev{position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.ev::before{content:"";position:absolute;left:-25px;top:16px;width:14px;height:14px;border-radius:50%;background:var(--zc,var(--blue));border:3px solid var(--bg)}
+.ev .dt{font-family:var(--mono);font-weight:600;font-size:.88rem;color:var(--zc)}
+.ev .tt{font-weight:700}
+.ev .ds{font-size:.9rem;color:var(--muted)}
+.ev.hide{display:none}
+.z-us{--zc:var(--blue)} .z-am{--zc:var(--green)} .z-eu{--zc:var(--violet)} .z-fr{--zc:var(--red)} .z-es{--zc:var(--gold-ink)}
+
+/* flashcards */
+.fc-area{display:grid;gap:14px;justify-items:center}
+.fc{width:min(560px,100%);aspect-ratio:1.55;max-width:100%;perspective:1400px;cursor:pointer;border:0;background:none;padding:0}
+.fc-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.fc.flip .fc-inner{transform:rotateY(180deg)}
+@media (prefers-reduced-motion:reduce){.fc-inner{transition:none}}
+.fc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:22px;display:grid;align-content:center;justify-items:center;text-align:center;gap:10px;border:1px solid var(--line);background:var(--card);box-shadow:0 10px 30px -18px rgba(22,32,63,.45);overflow:auto}
+.fc-face.back{transform:rotateY(180deg);background:var(--ink);color:#fff;border-color:var(--ink)}
+.fc-face .q{font-family:var(--display);font-size:clamp(1.5rem,5vw,2.2rem);font-weight:800;line-height:1.1}
+.fc-face .a{font-size:clamp(.98rem,3vw,1.12rem);line-height:1.45}
+.fc-face .hint{font-size:.78rem;color:var(--muted)}
+.fc-face.back .hint{color:#aab4d6}
+.fc-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.bar{height:10px;background:var(--line);border-radius:10px;overflow:hidden;width:min(560px,100%)}
+.bar>i{display:block;height:100%;background:var(--green);border-radius:10px;transition:width .3s}
+
+/* quiz */
+.q-card{display:grid;gap:14px}
+.q-text{font-size:1.2rem;font-weight:700}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;border:2px solid var(--line);background:var(--card);border-radius:12px;padding:12px 14px;font-weight:700}
+.opt:hover:not(:disabled){border-color:var(--blue)}
+.opt.ok{background:var(--green-soft);border-color:var(--green);color:#0b5c40}
+.opt.ko{background:var(--red-soft);border-color:var(--red);color:#8e1e18}
+.opt:disabled{cursor:default}
+.expl{background:var(--soft);border-radius:12px;padding:12px 14px;font-size:.95rem}
+.scorebig{font-family:var(--display);font-size:3.6rem;font-weight:900;line-height:1}
+.qtimer{height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.qtimer>i{display:block;height:100%;background:var(--gold);width:100%}
+
+/* duel */
+.duel-setup{display:grid;gap:12px}
+.duel-setup label{font-weight:700;font-size:.9rem}
+.duel-setup input[type=text]{font:inherit;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;width:100%;background:var(--card);color:var(--ink)}
+.arena{display:grid;grid-template-rows:1fr auto 1fr;gap:8px;min-height:78vh}
+.half{border-radius:18px;padding:14px;display:grid;gap:10px;align-content:start}
+.half.p1{background:var(--blue-soft);transform:rotate(180deg)}
+.half.p2{background:var(--gold-soft)}
+.arena.flat .half.p1{transform:none}
+.half .hd{display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.half .sc{font-family:var(--display);font-size:2.2rem;font-weight:900}
+.half .qq{font-weight:700;font-size:1.05rem}
+.buzz{border:0;border-radius:16px;padding:22px;font-family:var(--display);font-size:2rem;font-weight:900;letter-spacing:.05em;color:#fff}
+.p1 .buzz{background:var(--blue)} .p2 .buzz{background:var(--gold-ink)}
+.mid{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;align-items:center}
+.half .opt{padding:10px 12px;font-size:.95rem}
+.waitmsg{font-weight:700;color:var(--muted);text-align:center;padding:14px}
+
+/* oral */
+.oral-q{font-family:var(--display);font-size:1.8rem;font-weight:800}
+.kw{display:flex;flex-wrap:wrap;gap:8px}
+.kw label{display:flex;align-items:center;gap:6px;border:1.5px solid var(--line);border-radius:999px;padding:6px 12px;font-weight:700;font-size:.9rem;background:var(--card);cursor:pointer}
+.kw input{accent-color:var(--green)}
+.kw label:has(input:checked){background:var(--green-soft);border-color:var(--green)}
+.kw.blur label{filter:blur(5px);pointer-events:none}
+
+/* order game */
+.pool,.seq{display:grid;gap:8px}
+.pool button{text-align:left;border:1.5px solid var(--line);background:var(--card);border-radius:10px;padding:10px 12px;font-weight:700}
+.seq .it{background:var(--blue-soft);border-radius:10px;padding:10px 12px;font-weight:700;display:flex;gap:10px}
+.seq .it.ok{background:var(--green-soft)} .seq .it.ko{background:var(--red-soft)}
+.seq .it .n{font-family:var(--mono);color:var(--muted)}
+
+/* méthode */
+.meth-steps{display:grid;gap:10px}
+.ms{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start}
+.ms .k{font-family:var(--display);font-weight:900;font-size:1.3rem;background:var(--ink);color:#fff;border-radius:10px;min-width:44px;height:44px;display:grid;place-items:center;padding:0 8px}
+.formula{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:700}
+.formula span{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.formula i{font-style:normal;color:var(--muted)}
+.reveal{position:relative}
+.reveal .cover{position:absolute;inset:0;background:rgba(246,248,253,.7);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);display:grid;place-items:center;border-radius:12px;z-index:2}
+.reveal.open .cover{display:none}
+.corrige{display:grid;gap:10px;font-size:.95rem}
+.corrige .pl{border-left:4px solid var(--blue);padding-left:12px}
+.corrige .pl b{display:block}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;z-index:50}
+footer{padding:30px 16px;text-align:center;color:var(--muted);font-size:.85rem}
+</style>
+
+<div class="ticker" aria-hidden="true"><div class="ticker-track">
+  <span>WALL STREET · JEUDI 24 OCT. 1929 · <b>JEUDI NOIR</b> <span class="dn">▼</span></span>
+  <span>MARDI 29 OCT. 1929 · <b>MARDI NOIR</b> <span class="dn">▼</span></span>
+  <span>CHÔMAGE 1932 · ALLEMAGNE <b>25 %</b> · ANGLETERRE <b>22 %</b> · USA <b>24 %</b></span>
+  <span>EXPORTATIONS MONDIALES 1932 · <b class="dn">−72 %</b></span>
+  <span>NEW DEAL · <b>1933</b></span>
+  <span>6 FÉVRIER 1934 · <b>ÉMEUTES À PARIS</b></span>
+  <span>ACCORDS MATIGNON · <b>7-8 JUIN 1936</b></span>
+</div></div>
+
+<header class="top"><div class="wrap">
+  <div class="brand"><div class="logo">MISSION <span>KRACH</span> 1929</div><div class="progress-pill" id="pill">0 carte maîtrisée</div></div>
+  <nav class="nav" role="tablist" id="nav">
+    <button role="tab" data-t="accueil">Accueil</button>
+    <button role="tab" data-t="cours">Le cours</button>
+    <button role="tab" data-t="frise">Frise</button>
+    <button role="tab" data-t="flash">Flashcards</button>
+    <button role="tab" data-t="quiz">Quiz</button>
+    <button role="tab" data-t="duel">Duel à 2</button>
+    <button role="tab" data-t="oral">Défi oral</button>
+    <button role="tab" data-t="methode">Méthode &amp; sujets</button>
+  </nav>
+</div></header>
+
+<main class="wrap">
+
+<!-- ============ ACCUEIL ============ -->
+<section class="tab" id="t-accueil">
+  <div class="hero">
+    <div class="hero-main">
+      <div class="eyebrow" style="color:#cdd8ff">Chapitre d’histoire · contrôle demain</div>
+      <h1>L’impact de la crise de <em>1929</em></h1>
+      <p style="margin-top:6px;opacity:.9">Déséquilibres sociaux et économiques</p>
+      <div class="pb"><b>Problématique</b>Quelles sont les conséquences de la crise de 1929 sur la stabilité économique et politique du monde de l’entre-deux-guerres ?</div>
+      <svg class="chart" viewBox="0 0 200 100" aria-hidden="true"><polyline fill="none" stroke="#fff" stroke-width="4" points="0,70 25,60 50,45 75,30 95,12 105,55 120,70 140,80 160,88 200,92"/></svg>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n" id="st-cards">0/0</div><div class="l">flashcards maîtrisées</div></div>
+      <div class="stat"><div class="n" id="st-quiz">–</div><div class="l">meilleur score au quiz</div></div>
+      <div class="stat"><div class="n" id="st-plan">0/7</div><div class="l">étapes du plan faites</div></div>
+      <div class="stat"><div class="n" id="st-duel">–</div><div class="l">dernier duel</div></div>
+    </div>
+  </div>
+
+  <div class="card stack">
+    <div class="eyebrow">Étape 1 · 5 minutes</div>
+    <h2>Toute l’histoire en 8 scènes</h2>
+    <p class="muted">Lisez ça d’abord, à voix haute, chacun une scène. Après, tout le reste du chapitre se range dans ces cases.</p>
+    <div class="film" id="film"></div>
+  </div>
+
+  <div class="card stack">
+    <div class="eyebrow">Étape 2 · le plan d’attaque</div>
+    <h2>3 heures, 7 étapes</h2>
+    <p class="muted">Cochez au fur et à mesure. Lancez le minuteur de l’étape en cours pour ne pas déborder.</p>
+    <div class="timer card" style="padding:14px">
+      <div class="clock" id="clock">15:00</div>
+      <div class="stack" style="gap:6px;flex:1;min-width:180px">
+        <div id="clock-label" class="muted" style="font-weight:700">Choisissez une étape ci-dessous</div>
+        <div class="row"><button class="btn green" id="clock-go">Démarrer</button><button class="btn alt" id="clock-reset">Réinitialiser</button></div>
+      </div>
+    </div>
+    <div class="plan-list" id="plan"></div>
+  </div>
+</section>
+
+<!-- ============ COURS ============ -->
+<section class="tab" id="t-cours" hidden>
+  <div class="card stack">
+    <div class="eyebrow">Le plan du prof (fiche objectifs)</div>
+    <h2>Le cours, partie par partie</h2>
+    <p class="muted">Chaque partie contient : l’essentiel en 3 lignes, le détail, les corrections de vos fiches (encadrés rouges) et des bonus pour gratter des points en connaissances personnelles (encadrés violets).</p>
+    <div class="row"><button class="btn alt" id="open-all">Tout ouvrir</button><button class="btn alt" id="close-all">Tout fermer</button></div>
+  </div>
+
+  <!-- I-A -->
+  <details class="part us" open>
+    <summary><span class="code">I·A</span><div><div class="eyebrow">Le krach de 1929 et la Grande Dépression aux USA</div><h3>Le krach boursier d’octobre 1929</h3></div><span class="chev">▾</span></summary>
+    <div class="part-body">
+      <div class="essentiel"><b class="h">L’essentiel</b>Entre le <span class="d">jeudi 24</span> et le <span class="d">mardi 29 octobre 1929</span>, la Bourse de New York (<b>Wall Street</b>) s’effondre : c’est le <span class="hl">krach boursier</span>. Il vient de l’éclatement d’une <span class="hl">bulle spéculative</span>. Les 3 jours à retenir : <span class="d">jeudi 24</span> (« jeudi noir »), <span class="d">lundi 28</span>, <span class="d">mardi 29 octobre 1929</span> (« mardi noir »).</div>
+      <div class="grid2">
+        <div>
+          <h4>Cause n°1 : la bulle spéculative</h4>
+          <div class="flow">
+            <div class="node"><b>L’essor des années 1920</b>Après la Première Guerre mondiale, il faut tout reconstruire. L’économie américaine est en plein essor, la demande explose.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b>Le recours au crédit</b>Pour produire plus, les entreprises se financent à crédit : elles empruntent de l’argent aux banques.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b>L’emballement</b>Les banques prêtent <b>sans précaution</b>, persuadées d’être remboursées. Il suffit de posséder <b>10 %</b> de la somme pour obtenir le crédit.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b>La bulle</b>On prête à des gens <b>non solvables</b> (qui ne pourront pas rembourser). L’économie virtuelle (le crédit) n’a plus de lien avec l’économie réelle : on tourne avec de l’argent qui n’existe pas.</div>
+          </div>
+        </div>
+        <div>
+          <h4>Cause n°2 : l’or, la monnaie et la déflation</h4>
+          <div class="flow">
+            <div class="node"><b>L’or et la monnaie</b>Chaque pays possède une quantité d’or (sa richesse). La quantité de monnaie en circulation est proportionnelle à l’or possédé.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b>La thésaurisation</b>On pense qu’il vaut mieux garder beaucoup d’or que beaucoup de monnaie. Résultat : plus d’or dans les caisses, moins de monnaie en circulation, pour une richesse qui ne change pas.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b>La déflation</b>Si la monnaie se raréfie, elle vaut plus : avec la même somme on achète plus de choses. Les prix baissent : c’est la <span class="hl">déflation</span>.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b>La baisse de la demande</b>Tout le monde a intérêt à <b>ne pas acheter tout de suite</b> et à attendre que les prix baissent encore. Les acteurs économiques arrêtent d’acheter, il manque de l’argent dans le circuit.</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote"><b>Le déclic :</b> quand les financiers comprennent que les prêts ne seront pas remboursés, la bulle éclate. Tout le monde vend ses actions en même temps, les cours s’effondrent : c’est le <b>krach</b>. Les banques ne récupèrent pas l’argent prêté.</div>
+      <div>
+        <h4>Les conséquences : la spirale (le cercle vicieux)</h4>
+        <div class="spiral">
+          <div class="node"><b>1. Faillite des banques</b>Les crédits ne sont pas remboursés, les banques se retrouvent sans argent et font faillite. Elles ne peuvent plus financer l’économie.</div>
+          <div class="node"><b>2. Chute de la demande</b>En attendant que les prix baissent encore, plus personne n’achète. Les entreprises n’ont plus de clients.</div>
+          <div class="node"><b>3. Fermeture des entreprises</b>Sans clients ni prêts des banques, les entreprises ferment.</div>
+          <div class="node"><b>4. Chômage de masse</b>Les entreprises qui ferment licencient leurs ouvriers, qui se retrouvent au chômage, sans salaire.</div>
+          <div class="node"><b>5. Pauvreté</b>Les chômeurs ne mettent plus d’argent à la banque et ne consomment plus. La demande chute encore.</div>
+        </div>
+        <div class="loop">↺ … et ça relance la chute de la demande : la crise s’auto-entretient.</div>
+      </div>
+      <div class="grid2">
+        <div class="node" style="background:var(--soft);border-radius:12px;padding:12px"><b>Des USA au reste du monde (1) : l’arrêt des achats</b><br>Sans argent, les banques américaines arrêtent d’investir à l’étranger et les entreprises arrêtent d’acheter des produits étrangers. Il y a de moins en moins de commerce.</div>
+        <div class="node" style="background:var(--soft);border-radius:12px;padding:12px"><b>Des USA au reste du monde (2) : le rapatriement des capitaux</b><br>Pour ne pas faire faillite, les banques américaines <b>rapatrient</b> l’argent qu’elles avaient placé dans les banques étrangères. Celles-ci manquent d’argent à leur tour et font faillite.</div>
+      </div>
+      <div class="bonus"><b class="h">Bonus connaissances perso</b>Le jeudi 24 octobre 1929, environ <b>13 millions d’actions</b> sont vendues en une journée. Entre 1929 et 1932, l’indice boursier Dow Jones perd près de <b>90 %</b> de sa valeur.</div>
+    </div>
+  </details>
+
+  <!-- I-B -->
+  <details class="part us">
+    <summary><span class="code">I·B</span><div><div class="eyebrow">Le krach de 1929 et la Grande Dépression aux USA</div><h3>Du krach à la Grande Dépression (années 1930)</h3></div><span class="chev">▾</span></summary>
+    <div class="part-body">
+      <div class="essentiel"><b class="h">L’essentiel</b>Le krach, qui n’était au départ qu’un événement boursier, dégénère très vite en <span class="hl">Grande Dépression</span>, la plus grave crise économique du XX<sup>e</sup> siècle. Elle dure toutes les années 1930. Le président <b>Hoover</b> ne réagit pas, et le chômage atteint <b>24 % en 1932</b>.</div>
+      <ul>
+        <li><b>Hoover laisse faire.</b> Le président <b>Herbert Hoover</b> (républicain, <span class="d">1929-1933</span>) refuse que l’État intervienne. Il laisse les banques et le marché se débrouiller. Il est fidèle au <span class="hl">libéralisme</span>, la théorie capitaliste qui domine depuis le XIX<sup>e</sup> siècle : l’économie se régule toute seule et l’État ne doit pas s’en mêler.</li>
+        <li><b>Résultat :</b> faillites des banques, déflation, fermetures d’entreprises, chômage de masse. En <span class="d">1932</span>, <b>24 %</b> des Américains actifs sont au chômage.</li>
+        <li><b>Une crise de surproduction.</b> Les gens pauvres n’achètent plus : les produits industriels et agricoles sont fabriqués en trop grand nombre et ne se vendent plus. Les agriculteurs font faillite.</li>
+        <li><b>Le Dust Bowl (<span class="d">1933-1935</span>)</b> : un événement climatique exceptionnel. D’énormes nuages de poussière ravagent les plaines du centre des USA, détruisent les récoltes et assèchent les champs.</li>
+        <li><b>L’exode vers l’Ouest.</b> Dans une pauvreté extrême, ouvriers et agriculteurs sans emploi quittent leur région pour l’Ouest (surtout la Californie) dans l’espoir d’y trouver un emploi, souvent sans succès.</li>
+        <li><b>À l’échelle du monde :</b> les grandes puissances craignent que la crise américaine ne les atteigne et choisissent le <span class="hl">protectionnisme</span> (elles augmentent leurs droits de douane). Cela ne les empêche pas d’être touchées. Et, privés de leurs <b>clients étrangers</b>, les USA s’enfoncent encore plus dans la crise.</li>
+      </ul>
+      <div class="bonus"><b class="h">Bonus connaissances perso</b>Les bidonvilles de chômeurs sont surnommés <b>« Hoovervilles »</b>, pour se moquer du président. Les <b>bread-lines</b> sont les longues files d’attente pour la soupe populaire, on les voit sur l’affiche du doc B. En <span class="d">1930</span>, la loi <b>Hawley-Smoot</b> augmente fortement les droits de douane américains. Et le roman <i>Les Raisins de la colère</i> de Steinbeck (1939) raconte l’exode des fermiers du Dust Bowl vers la Californie.</div>
+      <div class="fix"><b class="h">Pour compléter votre fiche</b>La phrase à trous en bas de la fiche se termine ainsi : les grandes puissances « décident de <b>mettre en place des politiques protectionnistes</b> » et, « privés de leurs <b>clients / débouchés à l’étranger</b>, les USA s’enfoncent encore plus dans la crise ».</div>
+    </div>
+  </details>
+
+  <!-- I-C -->
+  <details class="part us">
+    <summary><span class="code">I·C</span><div><div class="eyebrow">Le krach de 1929 et la Grande Dépression aux USA</div><h3>Roosevelt et le New Deal</h3></div><span class="chev">▾</span></summary>
+    <div class="part-body">
+      <div class="essentiel"><b class="h">L’essentiel</b>En novembre <span class="d">1932</span>, le démocrate <b>Franklin D. Roosevelt</b> bat Hoover en promettant un <span class="hl">New Deal</span> (« nouvelle donne »). Il devient le <b>32<sup>e</sup> président</b> des USA en <span class="d">1933</span>. Sa politique est <b>interventionniste</b> : l’État dépense massivement pour créer des emplois, protéger les travailleurs et encadrer les banques.</div>
+      <h4>Le discours inaugural de Roosevelt (mars 1933) : ce qu’il faut savoir citer</h4>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Citation</th><th>Ce que ça veut dire</th></tr></thead>
+        <tbody>
+          <tr><td><q>la seule chose dont nous devons avoir peur est la peur elle-même</q></td><td>La phrase la plus célèbre. La panique elle-même aggrave la crise, il faut redonner confiance.</td></tr>
+          <tr><td><q>Les valeurs ont chuté à des niveaux fantastiques</q></td><td>Le krach : la Bourse et les prix se sont effondrés depuis 1929.</td></tr>
+          <tr><td><q>les moyens d’échanges sont bloqués par le gel des courants commerciaux</q></td><td>Le commerce mondial s’est effondré (protectionnisme, moins d’achats).</td></tr>
+          <tr><td><q>les feuilles mortes des entreprises industrielles jonchent partout le sol</q></td><td>Les entreprises ferment en masse.</td></tr>
+          <tr><td><q>les fermiers ne trouvent plus de marchés pour leurs produits</q></td><td>Crise de surproduction agricole : pas d’acheteurs, les prix s’effondrent.</td></tr>
+          <tr><td><q>pour des milliers de familles l’épargne de plusieurs années s’est évaporée</q></td><td>Les banques ont fait faillite : les gens ont perdu leurs économies.</td></tr>
+          <tr><td><q>une foule de citoyens sans emploi</q></td><td>Le chômage de masse (24 % en 1932).</td></tr>
+          <tr><td><q>Les pratiques des usuriers [banquiers] sans scrupules</q></td><td>Roosevelt accuse les banquiers d’avoir provoqué la crise en prêtant n’importe comment (la bulle).</td></tr>
+        </tbody>
+      </table></div>
+      <h4>Le New Deal en 3 axes (+ 1 moteur)</h4>
+      <div class="quote" style="border-color:var(--gold);background:var(--gold-soft)"><b>Le moteur : une dépense massive d’argent public.</b> L’État injecte de l’argent dans l’économie pour la relancer.</div>
+      <div class="grid3">
+        <div class="person"><div class="nm">1. Créer des emplois</div><div class="rl">politique économique</div><p style="font-size:.9rem;margin-top:6px"><b>Grands travaux</b> : l’État commande des routes, des barrages, des lignes de train et des lignes électriques, ce qui crée des emplois. Les lois <b>AAA</b> et <b>NIRA</b> (<span class="d">1933</span>) régulent les prix des produits agricoles et industriels et relancent l’économie.</p></div>
+        <div class="person"><div class="nm">2. Protéger les travailleurs</div><div class="rl">politique sociale</div><p style="font-size:.9rem;margin-top:6px"><b>Syndicats</b> : leur création est encouragée pour défendre les droits des travailleurs. L’<b>État-providence</b> apparaît avec le <b>Social Security Act</b> (<span class="d">1935</span>) : indemnités de chômage, retraites après 65 ans, aide aux personnes handicapées et malades.</p></div>
+        <div class="person"><div class="nm">3. Réglementer l’économie</div><div class="rl">nouveau rôle de l’État</div><p style="font-size:.9rem;margin-top:6px">Les <b>banques de dépôt</b> et les <b>banques d’affaires</b> sont séparées (loi Glass-Steagall, 1933), pour que les difficultés des unes ne contaminent pas les autres. C’est une rupture partielle avec le libéralisme : l’État intervient désormais dans l’économie.</p></div>
+      </div>
+      <div class="essentiel" style="background:var(--blue-soft)"><b class="h" style="color:var(--blue)">Le bilan (synthèse de votre fiche)</b>Le New Deal est un véritable <b>succès politique</b> : Roosevelt est réélu en 1936, 1940 et 1944. Il ne parvient pas <b>seul</b> à résoudre la crise : le chômage reste élevé et une rechute a lieu en 1937-1938. C’est la <b>Seconde Guerre mondiale</b> qui relance définitivement l’économie, car l’armée a besoin d’énormément de matériel de guerre. Roosevelt reste président jusqu’à sa mort en <span class="d">1945</span>. Il est le président qui a su lutter contre la crise économique.</div>
+      <div class="fix"><b class="h">Attention aux pièges</b>Le Social Security Act est de <b>1935</b> (et non 1933) : c’est l’AAA et la NIRA qui datent de 1933. Roosevelt est <b>démocrate</b>, Hoover <b>républicain</b>. Le New Deal n’est pas du communisme : c’est une <b>économie capitaliste encadrée par l’État</b>.</div>
+      <div class="bonus"><b class="h">Bonus connaissances perso</b>L’économiste britannique <b>John Maynard Keynes</b> théorise ce type de politique (relance par la dépense publique) dans sa <i>Théorie générale</i> (1936). En 1935, la Cour suprême annule la NIRA, jugée contraire à la Constitution. Aux élections de 1936, Roosevelt gagne dans <b>46 États sur 48</b> : c’est une réponse directe au doc A du sujet d’entraînement.</div>
+    </div>
+  </details>
+
+  <!-- II-A -->
+  <details class="part wd">
+    <summary><span class="code">II·A</span><div><div class="eyebrow">D’une crise américaine à une crise mondiale</div><h3>La crise en Amérique du Sud</h3></div><span class="chev">▾</span></summary>
+    <div class="part-body">
+      <div class="essentiel"><b class="h">L’essentiel</b>Les économies d’Amérique du Sud dépendent de l’exportation de <b>produits bruts</b> (surtout agricoles) vers les USA. Quand les USA arrêtent d’acheter, elles s’effondrent : chômage de masse, puis <span class="hl">coups d’État</span> et <span class="hl">régimes autoritaires</span> qui promettent de sortir de la crise par la force.</div>
+      <h4>Pourquoi ces pays sont-ils si fragiles ?</h4>
+      <ul>
+        <li>Leurs économies reposent sur <b>1 ou 2 produits bruts</b> destinés à l’exportation : le café au Brésil, l’étain en Bolivie, le nitrate et le cuivre au Chili, le sucre à Cuba, la viande et le blé en Argentine. Ce sont des produits de faible valeur.</li>
+        <li>Les <b>USA sont leur 1<sup>er</sup> partenaire commercial</b> et un gros investisseur. Quand les USA n’achètent plus et rapatrient leurs capitaux, ces pays perdent leurs clients <b>et</b> leur argent.</li>
+        <li>En <span class="d">1932</span>, la valeur des <b>exportations mondiales recule de 72 %</b> par rapport à 1929 (chiffre de votre cours). La baisse touche surtout les produits bruts agricoles.</li>
+      </ul>
+      <h4>Les conséquences</h4>
+      <div class="grid2">
+        <div class="person"><div class="nm">Sociales</div><p style="font-size:.92rem;margin-top:4px"><b>Chômage de masse</b> et misère : des centaines de milliers de personnes sont jetées dans le chômage. Sur un tableau de <span class="d">1934</span>, des chômeurs argentins manifestent avec une pancarte « <b>Du pain et du travail</b> ».</p></div>
+        <div class="person"><div class="nm">Politiques</div><p style="font-size:.92rem;margin-top:4px">Les gouvernements, incapables de régler la crise, sont renversés par l’armée. Au Brésil, <b>Getúlio Vargas</b> prend le pouvoir en <span class="d">1930</span>. En Argentine, le général <b>José Félix Uriburu</b> mène un coup d’État en <span class="d">1930</span>. D’après le journal <i>Le Temps</i> (25 août 1931), il y a eu des révolutions dans <b>9 pays</b> d’Amérique latine.</p></div>
+      </div>
+      <div class="quote"><b>Pourquoi ces régimes arrivent-ils si facilement au pouvoir ?</b> Parce que la population est désespérée, que les gouvernements élus n’arrivent à rien et que l’armée soutient ces régimes. Ils promettent de mettre fin à la crise grâce à une <b>politique autoritaire et dirigiste</b> qui repose sur un usage massif de la force.</div>
+      <h4>Les moyens de lutter contre la crise</h4>
+      <ul>
+        <li><b>Réduire les importations</b> avec une politique protectionniste (Brésil).</li>
+        <li><b>Réduire les dépenses publiques</b> (Brésil).</li>
+        <li><b>Planifier l’économie</b> : l’État fixe des objectifs de production à atteindre. C’est le <b>plan Pinedo</b> en Argentine (<span class="d">1934</span>), du ministre des Finances <b>Federico Pinedo</b>.</li>
+        <li><b>Diversifier l’économie</b> : développer et renforcer l’industrie pour ne plus dépendre des seules exportations agricoles (Argentine).</li>
+      </ul>
+      <div class="fix"><b class="h">Pour corriger votre fiche</b>Question « Quelles conséquences sociales ? » : la réponse est le <b>chômage de masse</b> et la pauvreté. Les salaires baissent et les paysans sont ruinés. Question « Pourquoi si touchées ? » : ces économies dépendent de l’exportation de produits bruts de faible valeur, à <b>plus de 70 %</b> pour certains pays.</div>
+      <div class="bonus"><b class="h">Bonus connaissances perso</b>Faute d’acheteurs, le Brésil <b>détruit une partie de ses stocks de café</b> pour faire remonter les prix : on en brûle même dans les locomotives. En 1937, Vargas instaure un régime dictatorial, l’<b>Estado Novo</b> (« État nouveau »).</div>
+    </div>
+  </details>
+
+  <!-- II-B -->
+  <details class="part wd">
+    <summary><span class="code">II·B</span><div><div class="eyebrow">D’une crise américaine à une crise mondiale</div><h3>L’Europe face à la crise</h3></div><span class="chev">▾</span></summary>
+    <div class="part-body">
+      <div class="essentiel"><b class="h">L’essentiel</b>Dès le début des années 1930, l’Europe est frappée : en <span class="d">1932</span>, le chômage atteint <b>25 % en Allemagne</b> et <b>22 % en Angleterre</b> (contre 24 % aux USA). La crise économique entraîne des <span class="hl">bouleversements politiques</span> majeurs. Deux exemples opposés : l’<b>Espagne</b> sombre dans une dictature d’extrême droite, la <b>France</b> porte la gauche au pouvoir.</div>
+      <div class="grid2">
+        <div>
+          <h4>L’Espagne : de la République à Franco</h4>
+          <div class="flow">
+            <div class="node"><b>Avant 1931</b>Le roi <b>Alphonse XIII</b> s’appuie sur la dictature du général Primo de Rivera (1923-1930). La crise fragilise le régime.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b><span class="d">12 avril 1931</span></b>Les républicains gagnent les élections municipales. Le roi s’exile.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b><span class="d">14 avril 1931</span></b>La <b>République espagnole</b> est proclamée.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b>Bienio des réformes (1931-1933) puis bienio noir (1933-1935)</b>Malgré des réformes ambitieuses, la République échoue face à la crise. La crise économique devient une crise politique et la droite revient au pouvoir.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b><span class="d">1936</span></b>Le <b>Front populaire</b> (coalition de gauche) gagne les élections.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b><span class="d">1936-1939</span> Guerre civile</b>Une partie des Espagnols juge la République incapable de résoudre la crise et soutient le général <b>Franco</b>. Celui-ci s’appuie sur l’armée coloniale pour prendre le pouvoir par la force : c’est un <b>pronunciamiento</b> (coup d’État militaire). La guerre civile oppose Franco et la République. Franco gagne et impose une dictature d’extrême droite (jusqu’en <span class="d">1975</span>, soit 36 ans).</div>
+          </div>
+        </div>
+        <div>
+          <h4>La France : du 6 février 1934 au Front populaire</h4>
+          <div class="flow">
+            <div class="node"><b>Une crise plus tardive (vers 1931)</b>Grâce aux forts échanges commerciaux entre la métropole et son <b>empire colonial</b>, la France est touchée plus tard que le reste de l’Europe.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b><span class="d">8 janvier 1934</span> : l’affaire Stavisky</b>Alexandre Stavisky, un escroc de Bayonne, est retrouvé mort dans un chalet à Chamonix. L’enquête montre qu’il était mêlé à des affaires de corruption avec des hommes politiques, surtout de gauche (radicaux). Il avait été arrêté et relâché 19 fois. On soupçonne des politiques de l’avoir fait tuer pour éviter un scandale.</div>
+            <div class="arr">↓</div>
+            <div class="node"><b><span class="d">6 février 1934</span> : l’émeute</b>Les <b>ligues d’extrême droite</b> (antiparlementaires) organisent une grande manifestation devant l’Assemblée nationale contre Stavisky et les députés « corrompus ». Elle tourne à l’émeute et la police tire : <b>19 morts et près de 1 500 blessés</b> (chiffres de votre fiche).</div>
+            <div class="arr">↓</div>
+            <div class="node"><b>La riposte de la gauche</b>Par peur d’un coup d’État fasciste, la population se mobilise et la gauche s’unit : c’est l’alliance des socialistes, des communistes et des radicaux. Le <b>Front populaire</b> gagne les élections législatives de <span class="d">1936</span>.</div>
+          </div>
+        </div>
+      </div>
+      <div class="fix"><b class="h">Pour corriger votre fiche</b>La crise touche la France « plus <b>tardivement</b> » que le reste de l’Europe. Le 6 février 1934 n’est pas une manifestation de la gauche : ce sont les <b>ligues d’extrême droite</b>. Le roi d’Espagne est Alphonse <b>XIII</b>.</div>
+      <div class="bonus"><b class="h">Bonus connaissances perso (très utile pour la problématique « stabilité politique »)</b>En Allemagne, la crise fait plus de <b>6 millions de chômeurs</b>. Les nazis en profitent et <b>Hitler devient chancelier le <span class="d">30 janvier 1933</span></b>, puis installe une dictature. C’est l’exemple le plus fort de la déstabilisation politique provoquée par la crise, à citer en ouverture ou en exemple.</div>
+    </div>
+  </details>
+
+  <!-- II-C -->
+  <details class="part wd">
+    <summary><span class="code">II·C</span><div><div class="eyebrow">D’une crise américaine à une crise mondiale</div><h3>Le Front populaire et les accords Matignon (1936)</h3></div><span class="chev">▾</span></summary>
+    <div class="part-body">
+      <div class="essentiel"><b class="h">L’essentiel</b>En mai <span class="d">1936</span>, la coalition de gauche du <span class="hl">Front populaire</span> gagne les élections législatives (second tour le <span class="d">3 mai</span>). Elle reste au pouvoir de <span class="d">1936 à 1938</span>. Avec <b>Léon Blum</b>, président du Conseil socialiste, elle obtient les <span class="hl">accords Matignon</span> (<span class="d">7-8 juin 1936</span>), puis les lois des <span class="d">20-21 juin 1936</span> : <b>15 jours de congés payés</b> et <b>semaine de 40 heures</b>.</div>
+      <h4>Les 3 figures du Front populaire (retenez « B-T-D »)</h4>
+      <div class="people">
+        <div class="person"><div class="nm">Léon Blum</div><div class="rl">SFIO (socialistes). Président du Conseil (chef du gouvernement) en 1936. <b>Le nom à connaître.</b></div></div>
+        <div class="person"><div class="nm">Maurice Thorez</div><div class="rl">PCF (communistes). Soutient le gouvernement sans y participer.</div></div>
+        <div class="person"><div class="nm">Édouard Daladier</div><div class="rl">Parti radical (centre gauche). Chef du gouvernement en 1938, c’est avec lui que le Front populaire prend fin.</div></div>
+      </div>
+      <h4>Pourquoi le Front populaire arrive-t-il au pouvoir ?</h4>
+      <ul>
+        <li><b>Contexte social</b> : la crise économique mondiale provoque de gros problèmes économiques et du chômage.</li>
+        <li><b>Contexte politique</b> : la gauche a peur d’une prise du pouvoir fasciste après le 6 février 1934, et l’extrême droite monte en Europe.</li>
+        <li><b>Promesses</b> : résoudre la crise économique, améliorer la vie des travailleurs et barrer la route à l’extrême droite. Le slogan : « Pain, paix, liberté ».</li>
+      </ul>
+      <div class="quote"><b>Les « grèves joyeuses » (mai-juin 1936)</b> : juste après l’élection, une vague de grèves massives éclate. Les ouvriers occupent les usines dans une ambiance de fête. Cette pression pousse le patronat à négocier.</div>
+      <h4>Les accords Matignon (7-8 juin 1936)</h4>
+      <p>Ils sont signés par la <b>CGPF</b> (qui représente le patronat) et la <b>CGT</b> (qui représente les salariés), en présence de Léon Blum.</p>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Mesure</th><th>Type</th><th>Pourquoi</th></tr></thead>
+        <tbody>
+          <tr><td><b>Salaires augmentés de 7 % à 15 %</b> (les plus bas augmentent le plus)</td><td>Économique</td><td>Plus d’argent, donc plus de consommation, donc l’économie repart.</td></tr>
+          <tr><td><b>Contrats (conventions) collectifs</b></td><td>Droits</td><td>Les conditions de travail sont négociées pour toute une branche, pas individu par individu.</td></tr>
+          <tr><td><b>Liberté syndicale</b></td><td>Droits</td><td>Chaque travailleur peut adhérer au syndicat de son choix.</td></tr>
+          <tr><td><b>Délégués du personnel</b> (entreprises de plus de 10 ouvriers)</td><td>Droits</td><td>Des représentants des ouvriers défendent leurs droits face au patron.</td></tr>
+          <tr><td><b>Pas de sanction pour fait de grève</b></td><td>Droits</td><td>Protège les grévistes de mai-juin 1936.</td></tr>
+          <tr><td><b>Lois des 20-21 juin 1936</b> : <b>15 jours de congés payés</b> par an et <b>semaine de 40 heures</b></td><td>Avancées sociales</td><td>Du temps libre : le travail n’est plus vécu comme une punition, et les loisirs font eux aussi tourner l’économie.</td></tr>
+        </tbody>
+      </table></div>
+      <h4>Critiques et résultats</h4>
+      <ul>
+        <li><b>La droite et le patronat</b> dénoncent des coûts trop lourds : avec des salaires plus hauts et moins d’heures travaillées, la France produit moins et plus cher, et n’arrive plus à exporter. Une affiche de droite annonce <b>« Faillite ! Misère ! »</b> et accuse la semaine de 40 heures de faire chuter les exportations.</li>
+        <li><b>Les résultats économiques sont décevants.</b> Les prix montent (<b>inflation</b>) et annulent les hausses de salaires. La production stagne, les capitaux fuient à l’étranger et le franc est dévalué (1936). Blum annonce une « pause » en 1937, et le Front populaire prend fin en <span class="d">1938</span>.</li>
+        <li><b>Mais un grand héritage</b> : il reste dans la mémoire collective des Français comme le <b>symbole de l’amélioration des conditions de vie et de travail</b>, avec les premiers congés payés.</li>
+      </ul>
+      <div class="fix"><b class="h">Pour corriger vos réponses</b>
+        « La droite dit qu’il y aura moins d’argent » : <b>à préciser</b>. La droite dit que les <b>coûts de production</b> vont exploser (salaires plus élevés, 40 heures), que les entreprises vont faire <b>faillite</b> et que la France <b>ne pourra plus exporter</b>.<br>
+        « Il n’y a plus d’importations » : <b>faux</b>. Les réformes n’ont pas marché parce que les <b>prix ont augmenté</b> (inflation) et ont mangé les hausses de salaires, que la production a stagné (40 heures), que les exportations ont baissé et que les capitaux sont partis à l’étranger.
+      </div>
+      <div class="bonus"><b class="h">Le graphique du commerce international</b>Dans les années 1930, les <b>droits de douane remontent</b> en France, au Royaume-Uni et aux USA, et la part de la production exportée <b>s’effondre</b>. Retenez : <b>crise → protectionnisme → encore moins d’échanges → crise aggravée</b>.</div>
+    </div>
+  </details>
+</section>
+
+<!-- ============ FRISE ============ -->
+<section class="tab" id="t-frise" hidden>
+  <div class="card stack">
+    <div class="eyebrow">Tout le chapitre sur une ligne</div>
+    <h2>La frise chronologique</h2>
+    <p class="muted">Filtrez par zone. Astuce : le chapitre tient entre <b>1929</b> (krach) et <b>1939</b> (fin de la guerre d’Espagne).</p>
+    <div class="filters" id="zones"></div>
+  </div>
+  <div class="tl" id="tl"></div>
+  <div class="card stack">
+    <div class="eyebrow">Mini-jeu</div>
+    <h2>Remets dans l’ordre</h2>
+    <p class="muted">Touchez les éléments dans le bon ordre, puis vérifiez.</p>
+    <div class="row"><button class="btn blue" id="ord-dates">5 dates au hasard</button><button class="btn red" id="ord-spiral">La spirale de la crise</button><button class="btn alt" id="ord-matignon">De Stavisky à Matignon</button></div>
+    <div class="grid2" id="ord-zone" hidden>
+      <div><div class="eyebrow" style="margin-bottom:6px">À placer</div><div class="pool" id="ord-pool"></div></div>
+      <div><div class="eyebrow" style="margin-bottom:6px">Ton ordre</div><div class="seq" id="ord-seq"></div>
+        <div class="row" style="margin-top:10px"><button class="btn green" id="ord-check">Vérifier</button><button class="btn alt" id="ord-undo">Annuler le dernier</button></div>
+        <p id="ord-res" style="margin-top:8px;font-weight:700"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLASHCARDS ============ -->
+<section class="tab" id="t-flash" hidden>
+  <div class="card stack">
+    <div class="eyebrow">Mémorisation active</div>
+    <h2>Flashcards</h2>
+    <p class="muted">Touchez la carte pour la retourner. Répondez à voix haute <b>avant</b> de retourner, puis soyez honnêtes : « Je savais » la retire du paquet, « À revoir » la remet plus loin. Au clavier : espace pour retourner, → pour « je savais », ← pour « à revoir ».</p>
+    <div class="filters" id="fc-cats"></div>
+    <div class="row"><label class="row" style="gap:6px;font-weight:700;font-size:.9rem"><input type="checkbox" id="fc-rev"> Mode inversé (réponse → question)</label><button class="btn alt" id="fc-reset">Remettre tout à zéro</button></div>
+  </div>
+  <div class="fc-area">
+    <div class="bar"><i id="fc-bar" style="width:0%"></i></div>
+    <div class="muted" id="fc-count" style="font-weight:700"></div>
+    <button class="fc" id="fc" aria-label="Retourner la carte"><div class="fc-inner">
+      <div class="fc-face front"><span class="tag" id="fc-tag"></span><div class="q" id="fc-q"></div><div class="hint">toucher pour retourner</div></div>
+      <div class="fc-face back"><div class="a" id="fc-a"></div><div class="hint">alors, vous saviez ?</div></div>
+    </div></button>
+    <div class="fc-actions"><button class="btn red" id="fc-no">À revoir</button><button class="btn green" id="fc-yes">Je savais</button></div>
+  </div>
+</section>
+
+<!-- ============ QUIZ ============ -->
+<section class="tab" id="t-quiz" hidden>
+  <div class="card stack" id="quiz-start">
+    <div class="eyebrow">Solo · 15 secondes par question</div>
+    <h2>Le quiz chrono</h2>
+    <p class="muted">12 questions tirées au hasard. Chaque réponse est expliquée : lisez les explications, c’est là qu’on apprend.</p>
+    <div class="filters" id="quiz-parts"></div>
+    <div><button class="btn blue" id="quiz-go">Lancer le quiz</button></div>
+  </div>
+  <div class="card q-card" id="quiz-box" hidden></div>
+</section>
+
+<!-- ============ DUEL ============ -->
+<section class="tab" id="t-duel" hidden>
+  <div class="card duel-setup" id="duel-setup">
+    <div class="eyebrow">À deux sur un seul téléphone</div>
+    <h2>Le duel au buzzer</h2>
+    <p class="muted">Posez le téléphone à plat entre vous deux, chacun de son côté : la moitié du haut est à l’envers pour le joueur d’en face. La question s’affiche des deux côtés. Le premier qui buzze répond. Mauvaise réponse ? L’autre récupère la main. Sur ordinateur, touche <b>A</b> pour le joueur 1 et <b>L</b> pour le joueur 2.</p>
+    <div class="grid2">
+      <div><label for="dn1">Joueur 1 (en haut)</label><input type="text" id="dn1" value="Joueur 1"></div>
+      <div><label for="dn2">Joueur 2 (en bas)</label><input type="text" id="dn2" value="Joueur 2"></div>
+    </div>
+    <label class="row" style="gap:6px"><input type="checkbox" id="dflat"> Ne pas retourner la moitié du haut (si vous êtes côte à côte devant un ordinateur)</label>
+    <div class="row"><button class="btn gold" id="duel-go">Lancer le duel (10 questions)</button></div>
+  </div>
+  <div id="duel-arena" hidden></div>
+</section>
+
+<!-- ============ ORAL ============ -->
+<section class="tab" id="t-oral" hidden>
+  <div class="card stack">
+    <div class="eyebrow">À deux · 90 secondes</div>
+    <h2>Le défi « Explique-moi »</h2>
+    <p class="muted">L’un <b>explique</b> à voix haute, l’autre <b>écoute</b> et coche chaque mot-clé prononcé. Les mots-clés sont floutés pour celui qui explique : c’est l’auditeur qui tient le téléphone. Ensuite, on échange les rôles. Ces questions sont exactement les « Savoir expliquer » de la fiche objectifs de votre prof.</p>
+  </div>
+  <div class="card stack" id="oral-box"></div>
+</section>
+
+<!-- ============ METHODE ============ -->
+<section class="tab" id="t-methode" hidden>
+  <div class="card stack">
+    <div class="eyebrow">Ce que votre prof attend (fiche brouillon)</div>
+    <h2>La méthode en une page</h2>
+    <div class="meth-steps">
+      <div class="ms"><div class="k">Intro</div><div><b>4 éléments, dans cet ordre :</b>
+        <ol style="margin:6px 0 0;padding-left:1.2em;display:grid;gap:4px">
+          <li><b>Accroche</b> (composition) ou <b>présentation du document</b> (commentaire) : nature, auteur, date, destinataire.</li>
+          <li><b>Contexte et enjeux</b> : où, quand, et ce qui est en jeu.</li>
+          <li><b>Définition des notions du sujet</b> : krach, crise économique, New Deal, etc.</li>
+          <li><b>Problématique + annonce du plan</b>.</li>
+        </ol></div></div>
+      <div class="ms"><div class="k">Dév.</div><div><b>2 parties (I, II), avec 2 sous-parties chacune (A, B).</b> Les titres servent seulement au brouillon : sur la copie, on écrit des paragraphes reliés par des phrases de transition. Chaque sous-partie est un paragraphe construit ainsi :
+        <div class="formula" style="margin-top:8px"><span>Idée générale</span><i>→</i><span>Composition : une <b>notion</b> expliquée · Commentaire : une <b>citation</b></span><i>→</i><span>Composition : un <b>exemple précis</b> · Commentaire : une <b>explication + vos connaissances</b></span></div></div></div>
+      <div class="ms"><div class="k">Concl.</div><div><b>Réponse à la problématique</b> (2-3 phrases qui résument le raisonnement), puis <b>ouverture</b> vers la suite (souvent la Seconde Guerre mondiale).</div></div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card stack">
+      <div class="eyebrow">Commentaire : le réflexe qui rapporte des points</div>
+      <h3>Exercer son esprit critique</h3>
+      <p>Votre prof insiste : le doc A est un <b>programme électoral</b>. Il cherche à <b>convaincre</b>, pas à dire la vérité. Et il vient du parti républicain, celui de Hoover, au pouvoir de 1929 à 1932 pendant l’aggravation de la crise.</p>
+      <p><b>Phrase toute faite :</b> « Ce document est à nuancer : il s’agit d’un programme électoral du camp adverse, qui a intérêt à noircir le bilan de Roosevelt. D’ailleurs, les électeurs ne le suivent pas, puisque Roosevelt est réélu très largement en 1936. »</p>
+    </div>
+    <div class="card stack">
+      <div class="eyebrow">Phrases de transition prêtes à l’emploi</div>
+      <h3>Pour relier vos parties</h3>
+      <ul style="margin:0;padding-left:1.2em;display:grid;gap:6px">
+        <li>« Si la crise naît aux États-Unis, elle ne tarde pas à se propager au reste du monde. »</li>
+        <li>« Face à ces difficultés, les États cherchent des solutions très différentes. »</li>
+        <li>« Au-delà de l’économie, la crise déstabilise profondément les régimes politiques. »</li>
+        <li>« Cependant, ces réformes ne font pas l’unanimité. »</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card stack">
+    <div class="eyebrow">Sujet d’entraînement · composition</div>
+    <h2>Sujet 1 : Les causes et les conséquences de la crise économique mondiale de 1929</h2>
+    <p class="muted">Faites d’abord votre plan au brouillon (10 minutes chrono), puis révélez le corrigé et comparez.</p>
+    <div class="reveal" id="rv1"><div class="cover"><button class="btn blue" data-open="rv1">Révéler le corrigé</button></div>
+      <div class="corrige">
+        <p><b>Accroche :</b> « Le jeudi 24 octobre 1929, près de 13 millions d’actions sont vendues en une seule journée à la Bourse de New York : c’est le “jeudi noir”. »</p>
+        <p><b>Contexte :</b> dans les années 1920, les États-Unis sont la première puissance économique mondiale, en pleine prospérité. L’entre-deux-guerres (1918-1939) reste pourtant une période fragile.</p>
+        <p><b>Notions :</b> un <i>krach boursier</i> est un effondrement brutal des cours de la Bourse. Une <i>crise économique</i> est un ralentissement ou un recul durable de l’activité (production, emploi, commerce). Elle est <i>mondiale</i> car elle touche tous les continents.</p>
+        <p><b>Problématique :</b> Comment une crise née à Wall Street devient-elle une crise mondiale qui déstabilise les économies et les régimes politiques de l’entre-deux-guerres ?</p>
+        <div class="pl"><b>I. Une crise américaine</b>A. Les causes : la bulle spéculative (crédit sans précaution, 10 %, prêts non solvables), puis le krach des 24, 28 et 29 octobre 1929.<br>B. De la crise boursière à la Grande Dépression : la spirale (faillites de banques, chute de la demande, fermetures, chômage à 24 % en 1932). Hoover et le libéralisme, le Dust Bowl. La réponse du New Deal de Roosevelt (1933).</div>
+        <div class="pl"><b>II. Une crise mondiale</b>A. La propagation : rapatriement des capitaux américains, protectionnisme, exportations mondiales en recul de 72 % en 1932. L’Amérique du Sud, dépendante de ses exportations, est ruinée.<br>B. Des conséquences politiques : coups d’État en Amérique du Sud (Vargas, Uriburu), guerre civile en Espagne puis Franco, 6 février 1934 et Front populaire en France (Blum, accords Matignon).</div>
+        <p><b>Conclusion :</b> la crise de 1929 est d’abord une crise financière américaine. Elle devient mondiale par le jeu des capitaux et du commerce, et fragilise partout la stabilité économique et politique, en poussant vers l’autoritarisme ou vers des réformes sociales. <b>Ouverture :</b> en Allemagne, elle favorise l’arrivée d’Hitler au pouvoir (1933), l’un des chemins vers la Seconde Guerre mondiale.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card stack">
+    <div class="eyebrow">Sujet d’entraînement · commentaire</div>
+    <h2>Sujet 2 : les conséquences de la crise aux États-Unis et le New Deal (docs A et B)</h2>
+    <div class="reveal" id="rv2"><div class="cover"><button class="btn blue" data-open="rv2">Révéler le corrigé</button></div>
+      <div class="corrige">
+        <p><b>Présentation :</b> le doc A est un <b>programme électoral du parti républicain</b> (celui de Hoover), adopté lors de sa convention du <b>9 juin 1936</b>, quelques mois avant l’élection présidentielle où Roosevelt se représente. Il s’adresse aux électeurs américains. Le doc B est une <b>affiche électorale du parti démocrate</b> (celui de Roosevelt) pour les élections de <b>1944</b>. Elle oppose les années de crise (<i>bread-lines, homeless, bank closed</i>) aux progrès obtenus depuis (<i>higher wages, low rent homes</i>).</p>
+        <p><b>Contexte :</b> depuis le krach d’octobre 1929, les États-Unis connaissent la Grande Dépression (24 % de chômage en 1932). Élu en 1932, Roosevelt applique depuis 1933 le New Deal.</p>
+        <p><b>Problématique :</b> Quelles sont les conséquences de la crise aux États-Unis, et comment le New Deal tente-t-il de les combattre ?</p>
+        <div class="pl"><b>I. Une crise économique et sociale d’une ampleur exceptionnelle</b>A. Une crise économique. Citation (doc B) : « Bank closed ». Explication : faillites bancaires, épargne perdue, spirale de la crise, surproduction.<br>B. Une crise sociale. Citations (doc B) : « Bread-lines », « Homeless ». Explication : chômage de masse (24 %), soupe populaire, Hoovervilles, exode du Dust Bowl. Le doc A lui-même reconnaît « le problème du chômage ».</div>
+        <div class="pl"><b>II. Le New Deal, une réponse nouvelle mais contestée</b>A. L’intervention de l’État. Citation (doc B) : « Higher wages », « Low rent homes ». Doc A : « Les directives d’état ont remplacé la libre entreprise ». Explication : grands travaux, AAA et NIRA (1933), Social Security Act (1935), syndicats, contrôle des banques.<br>B. Les critiques des républicains. Citations (doc A) : « Le président a usurpé les pouvoirs du Congrès », « prolongeant la crise ». Explication : ils défendent le libéralisme. <b>Esprit critique :</b> c’est un programme électoral du camp adverse. Roosevelt est pourtant réélu triomphalement en 1936, même si la crise ne se termine vraiment qu’avec la Seconde Guerre mondiale.</div>
+        <p><b>Conclusion :</b> les documents montrent une crise dévastatrice (banques, chômage, misère) et un New Deal qui transforme le rôle de l’État. Il est contesté par les républicains mais soutenu par les électeurs. <b>Ouverture :</b> c’est l’effort de guerre après 1941 qui relance vraiment l’économie américaine.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card stack">
+    <div class="eyebrow">Sujet d’entraînement · composition</div>
+    <h2>Sujet 3 : les raisons de la propagation de la crise de 1929 en Amérique du Sud et ses conséquences</h2>
+    <div class="reveal" id="rv3"><div class="cover"><button class="btn blue" data-open="rv3">Révéler le corrigé</button></div>
+      <div class="corrige">
+        <p><b>Accroche :</b> « En 1934, un peintre argentin représente une foule de chômeurs brandissant une pancarte : “Du pain et du travail”. »</p>
+        <p><b>Problématique :</b> Pourquoi la crise de 1929 frappe-t-elle si durement l’Amérique du Sud, et comment bouleverse-t-elle ses économies et ses régimes politiques ?</p>
+        <div class="pl"><b>I. Des économies très dépendantes, donc très exposées</b>A. Notion : économie d’exportation de produits bruts (café au Brésil, étain en Bolivie, nitrate au Chili, sucre à Cuba). Des produits de faible valeur, qui pèsent parfois plus de 70 % des exportations.<br>B. Les USA, premier partenaire, arrêtent d’acheter et rapatrient leurs capitaux. Les exportations mondiales reculent de 72 % en 1932, et le protectionnisme aggrave la chute.</div>
+        <div class="pl"><b>II. Des conséquences sociales et politiques majeures</b>A. Chômage de masse et misère (tableau de 1934 : « du pain et du travail »). Le Brésil détruit son café.<br>B. Des régimes autoritaires : coups d’État de Vargas au Brésil et d’Uriburu en Argentine (1930), révolutions dans 9 pays (<i>Le Temps</i>, 1931). Ces régimes répondent à la crise par la force et le dirigisme : plan Pinedo (1934), diversification industrielle, protectionnisme.</div>
+        <p><b>Conclusion + ouverture :</b> la crise transforme des économies dépendantes en économies plus dirigées, mais au prix de la démocratie. Comme en Europe (Espagne, Allemagne), la crise favorise les régimes autoritaires.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card stack">
+    <div class="eyebrow">Checklist avant de rendre la copie</div>
+    <h3>Les points que le correcteur cherche</h3>
+    <div class="stack" id="checklist"></div>
+  </div>
+</section>
+
+</main>
+<footer>Mission Krach 1929 · fait à partir de vos fiches de cours · bon courage pour demain !</footer>
+
+<script>
+/* ---------- helpers ---------- */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const store={get(k,d){try{const v=localStorage.getItem('mk29-'+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem('mk29-'+k,JSON.stringify(v))}catch(e){}}};
+const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(m){const t=document.createElement('div');t.className='toast';t.textContent=m;document.body.appendChild(t);setTimeout(()=>t.remove(),1800)}
+
+/* ---------- tabs ---------- */
+function showTab(id){
+  $$('section.tab').forEach(s=>s.hidden=s.id!=='t-'+id);
+  $$('#nav button').forEach(b=>b.setAttribute('aria-selected',b.dataset.t===id));
+  store.set('tab',id);
+  window.scrollTo({top:0});
+  if(id==='flash')fcRender();
+}
+$$('#nav button').forEach(b=>b.onclick=()=>showTab(b.dataset.t));
+
+/* ---------- FILM ---------- */
+const FILM=[
+ ['1920-1929','La fête à crédit','Après la Grande Guerre, les USA sont en plein essor. Tout le monde emprunte pour acheter des actions : les banques prêtent sans compter. Une bulle spéculative gonfle.'],
+ ['24-29 oct. 1929','Le krach','À Wall Street, tout le monde vend ses actions en même temps. Jeudi noir, mardi noir : la Bourse s’effondre.'],
+ ['1929-1932','La spirale','Les banques font faillite, les entreprises ferment, le chômage explose (24 % en 1932). Hoover, fidèle au libéralisme, laisse faire.'],
+ ['1933','Roosevelt et le New Deal','Le démocrate Roosevelt promet une « nouvelle donne » : grands travaux, AAA, NIRA, Social Security (1935). L’État intervient dans l’économie.'],
+ ['1930-1932','La contagion','Les banques américaines rapatrient leur argent, tous les pays se ferment (protectionnisme). En 1932, les exportations mondiales ont chuté de 72 %.'],
+ ['1930','L’Amérique du Sud s’écroule','Ces pays vivent de l’exportation du café, du sucre ou de l’étain. Sans acheteurs, c’est le chômage de masse, puis les coups d’État (Vargas, Uriburu).'],
+ ['1931-1939','L’Espagne bascule','La République de 1931 échoue face à la crise. Le Front populaire gagne en 1936, puis Franco mène la guerre civile (1936-1939) et impose une dictature.'],
+ ['1934-1938','La France choisit la gauche','L’affaire Stavisky, puis l’émeute des ligues du 6 février 1934. La gauche s’unit : le Front populaire de Blum obtient les accords Matignon, les congés payés et les 40 heures.']
+];
+$('#film').innerHTML=FILM.map(f=>`<div class="scene"><div class="when">${f[0]}</div><h3>${f[1]}</h3><p>${f[2]}</p></div>`).join('');
+
+/* ---------- PLAN + TIMER ---------- */
+const PLAN=[
+ [15,'Le film en 8 scènes','Lisez l’histoire à voix haute, une scène chacun (onglet Accueil).'],
+ [30,'Cours partie I (USA)','Onglet Cours : I·A, I·B, I·C. Lisez « l’essentiel » puis le détail, un résumé chacun à voix haute.'],
+ [30,'Cours partie II (monde)','Onglet Cours : II·A, II·B, II·C. Attention aux encadrés rouges (corrections de vos fiches).'],
+ [25,'Flashcards','Tout le paquet, jusqu’à ce qu’il soit vide. Mode inversé pour le 2ᵉ tour.'],
+ [10,'Pause + frise','Vraie pause (5 min), puis le mini-jeu « Remets dans l’ordre ».'],
+ [25,'Duel + défi oral','2 duels au buzzer, puis 4 défis « Explique-moi » (2 chacun).'],
+ [45,'Méthode : on s’entraîne','Chacun fait le plan d’un sujet au brouillon (15 min), puis on compare avec le corrigé. Finir par la checklist.']
+];
+let planDone=store.get('plan',[]);
+function renderPlan(){
+  let t=0;
+  $('#plan').innerHTML=PLAN.map((p,i)=>{const a=t;t+=p[0];const f=m=>`${Math.floor(m/60)}h${String(m%60).padStart(2,'0')}`;
+    return `<div class="step ${planDone.includes(i)?'done':''}"><div class="time">${f(a)} → ${f(t)}</div><div><h4>${esc(p[1])} <span class="muted" style="font-weight:400">· ${p[0]} min</span></h4><p>${esc(p[2])}</p></div><div class="row" style="gap:8px"><button class="btn alt" data-timer="${i}" style="padding:8px 12px">Minuteur</button><input type="checkbox" aria-label="Étape faite" data-step="${i}" ${planDone.includes(i)?'checked':''}></div></div>`}).join('');
+  $$('[data-step]').forEach(c=>c.onchange=()=>{const i=+c.dataset.step;planDone=c.checked?[...new Set([...planDone,i])]:planDone.filter(x=>x!==i);store.set('plan',planDone);renderPlan();stats()});
+  $$('[data-timer]').forEach(b=>b.onclick=()=>{const p=PLAN[+b.dataset.timer];setClock(p[0]*60,p[1]);$('#clock').scrollIntoView({behavior:'smooth',block:'center'})});
+}
+let clockLeft=15*60,clockInt=null;
+function drawClock(){$('#clock').textContent=`${String(Math.floor(clockLeft/60)).padStart(2,'0')}:${String(clockLeft%60).padStart(2,'0')}`}
+function setClock(s,label){clearInterval(clockInt);clockInt=null;clockLeft=s;$('#clock-label').textContent=label;$('#clock-go').textContent='Démarrer';drawClock()}
+$('#clock-go').onclick=()=>{if(clockInt){clearInterval(clockInt);clockInt=null;$('#clock-go').textContent='Reprendre';return}
+  $('#clock-go').textContent='Pause';clockInt=setInterval(()=>{clockLeft--;drawClock();if(clockLeft<=0){clearInterval(clockInt);clockInt=null;$('#clock-go').textContent='Démarrer';toast('Temps écoulé : étape suivante !')}},1000)};
+$('#clock-reset').onclick=()=>setClock(15*60,'Choisissez une étape ci-dessous');
+
+/* ---------- COURS open/close ---------- */
+$('#open-all').onclick=()=>$$('details.part').forEach(d=>d.open=true);
+$('#close-all').onclick=()=>$$('details.part').forEach(d=>d.open=false);
+
+/* ---------- FRISE ---------- */
+const ZONES={us:'États-Unis',am:'Amérique du Sud',eu:'Europe / Allemagne',es:'Espagne',fr:'France'};
+const EVENTS=[
+ ['1920-1929','us','Les années folles, la prospérité à crédit','Essor économique, crédit facile, la bulle spéculative gonfle.',1925],
+ ['1923-1930','es','Dictature de Primo de Rivera','Sous le roi Alphonse XIII.',1923],
+ ['24 oct. 1929','us','Jeudi noir','Début du krach à Wall Street.',1929.81],
+ ['28-29 oct. 1929','us','Lundi et mardi noirs','La Bourse s’effondre : c’est le krach.',1929.82],
+ ['1929-1933','us','Présidence Hoover (républicain)','Libéralisme, « laisser-faire » : la crise s’aggrave.',1929.9],
+ ['1930','us','Protectionnisme américain','Loi Hawley-Smoot : les droits de douane augmentent.',1930.4],
+ ['sept. 1930','am','Coup d’État en Argentine','Le général José Félix Uriburu prend le pouvoir.',1930.7],
+ ['oct. 1930','am','Vargas prend le pouvoir au Brésil','Révolution de 1930.',1930.8],
+ ['12-14 avril 1931','es','Proclamation de la République espagnole','Victoire républicaine aux municipales, le roi Alphonse XIII s’exile.',1931.3],
+ ['1931','fr','La crise touche la France','Plus tardivement, grâce à l’empire colonial.',1931.5],
+ ['1932','eu','Chômage record','Allemagne 25 %, Angleterre 22 %, USA 24 %. Exportations mondiales en recul de 72 %.',1932.5],
+ ['nov. 1932','us','Élection de Roosevelt (démocrate)','Il promet un New Deal.',1932.85],
+ ['30 janv. 1933','eu','Hitler chancelier','La crise porte les nazis au pouvoir en Allemagne.',1933.08],
+ ['mars 1933','us','Discours d’investiture de Roosevelt','« La seule chose dont nous devons avoir peur est la peur elle-même. »',1933.2],
+ ['1933','us','AAA et NIRA','Premières lois du New Deal : prix agricoles, industrie, emplois.',1933.4],
+ ['1933-1935','us','Dust Bowl','Tempêtes de poussière dans les Grandes Plaines, exode vers la Californie.',1933.5],
+ ['1933-1935','es','Bienio noir','La droite au pouvoir en Espagne.',1933.9],
+ ['8 janv. 1934','fr','Affaire Stavisky','L’escroc est retrouvé mort à Chamonix, scandale de corruption.',1934.02],
+ ['6 fév. 1934','fr','Émeutes du 6 février','Manifestation des ligues d’extrême droite : 19 morts, ~1 500 blessés.',1934.1],
+ ['1934','am','Plan Pinedo en Argentine','Planification et diversification de l’économie.',1934.5],
+ ['1935','us','Social Security Act','Retraites, chômage, handicap : l’État-providence américain.',1935.6],
+ ['fév. 1936','es','Victoire du Front populaire espagnol','',1936.1],
+ ['mai 1936','fr','Victoire du Front populaire','Législatives du 26 avril et du 3 mai. Léon Blum devient chef du gouvernement.',1936.35],
+ ['mai-juin 1936','fr','Les « grèves joyeuses »','Occupations d’usines dans la bonne humeur.',1936.4],
+ ['7-8 juin 1936','fr','Accords Matignon','Salaires +7 à 15 %, conventions collectives, délégués du personnel.',1936.44],
+ ['20-21 juin 1936','fr','Lois sociales','15 jours de congés payés et semaine de 40 heures.',1936.47],
+ ['juil. 1936','es','Pronunciamiento de Franco','Début de la guerre civile (1936-1939).',1936.55],
+ ['nov. 1936','us','Roosevelt réélu','Il gagne dans 46 États sur 48.',1936.85],
+ ['1938','fr','Fin du Front populaire','Daladier prend la tête du gouvernement.',1938.3],
+ ['1939','es','Victoire de Franco','Dictature jusqu’en 1975.',1939.25],
+ ['1945','us','Mort de Roosevelt','Président de 1933 à 1945 (élu 4 fois).',1945.3]
+];
+let zoneOn=new Set(Object.keys(ZONES));
+$('#zones').innerHTML=Object.entries(ZONES).map(([k,v])=>`<button class="chip" aria-pressed="true" data-z="${k}">${v}</button>`).join('');
+$$('#zones .chip').forEach(c=>c.onclick=()=>{const z=c.dataset.z;zoneOn.has(z)?zoneOn.delete(z):zoneOn.add(z);c.setAttribute('aria-pressed',zoneOn.has(z));$$('#tl .ev').forEach(e=>e.classList.toggle('hide',!zoneOn.has(e.dataset.z)))});
+$('#tl').innerHTML=EVENTS.map(e=>`<div class="ev z-${e[1]}" data-z="${e[1]}"><div class="dt">${e[0]} · ${ZONES[e[1]]}</div><div class="tt">${esc(e[2])}</div>${e[3]?`<div class="ds">${esc(e[3])}</div>`:''}</div>`).join('');
+
+/* order game */
+let ordAns=[],ordSeq=[],ordItems=[];
+function ordStart(items){ordAns=items.map(x=>x.label);ordItems=shuffle(items.map(x=>x.label));ordSeq=[];$('#ord-zone').hidden=false;$('#ord-res').textContent='';ordDraw()}
+function ordDraw(){
+  $('#ord-pool').innerHTML=ordItems.filter(x=>!ordSeq.includes(x)).map(x=>`<button data-o="${esc(x)}">${esc(x)}</button>`).join('')||'<p class="muted">Tout est placé. Vérifiez !</p>';
+  $('#ord-seq').innerHTML=ordSeq.map((x,i)=>`<div class="it"><span class="n">${i+1}</span>${esc(x)}</div>`).join('')||'<p class="muted">Touchez un élément à gauche.</p>';
+  $$('#ord-pool button').forEach(b=>b.onclick=()=>{ordSeq.push(b.dataset.o);ordDraw()});
+}
+$('#ord-undo').onclick=()=>{ordSeq.pop();$('#ord-res').textContent='';ordDraw()};
+$('#ord-check').onclick=()=>{if(ordSeq.length<ordAns.length){$('#ord-res').textContent='Placez tous les éléments d’abord.';return}
+  let ok=0;$$('#ord-seq .it').forEach((el,i)=>{const g=ordSeq[i]===ordAns[i];ok+=g;el.classList.add(g?'ok':'ko')});
+  $('#ord-res').innerHTML=ok===ordAns.length?'Parfait, tout est dans l’ordre !':`${ok}/${ordAns.length} bien placés. Le bon ordre : ${ordAns.map((x,i)=>`<br>${i+1}. ${esc(x)}`).join('')}`};
+$('#ord-dates').onclick=()=>{const pick=shuffle(EVENTS).slice(0,5).sort((a,b)=>a[4]-b[4]);ordStart(pick.map(e=>({label:`${e[2]}`})))};
+$('#ord-spiral').onclick=()=>ordStart(['Bulle spéculative (crédits sans précaution)','Krach boursier (oct. 1929)','Faillite des banques','Chute de la demande','Fermeture des entreprises','Chômage de masse et pauvreté'].map(label=>({label})));
+$('#ord-matignon').onclick=()=>ordStart(['Affaire Stavisky (janv. 1934)','Émeutes des ligues (6 fév. 1934)','Union de la gauche : Front populaire','Victoire aux législatives (mai 1936)','Grèves joyeuses','Accords Matignon (7-8 juin 1936)','Lois congés payés + 40 h (20-21 juin 1936)'].map(label=>({label})));
+
+/* ---------- FLASHCARDS ---------- */
+const CATS={date:'Dates',perso:'Personnages',notion:'Notions',chiffre:'Chiffres',meca:'Expliquer'};
+const CARDS=[
+ ['date','24 octobre 1929','Le « jeudi noir » : début du krach à Wall Street (13 millions d’actions vendues).'],
+ ['date','24, 28 et 29 octobre 1929','Les 3 jours du krach boursier : jeudi noir, lundi noir, mardi noir.'],
+ ['date','1929-1933','Présidence de Herbert Hoover (républicain), qui laisse faire le marché.'],
+ ['date','Novembre 1932','Élection de Franklin D. Roosevelt (démocrate) contre Hoover.'],
+ ['date','Mars 1933','Discours d’investiture de Roosevelt : « la seule chose dont nous devons avoir peur est la peur elle-même ».'],
+ ['date','1933-1945','Franklin D. Roosevelt, président des USA (élu 4 fois, mort en fonction).'],
+ ['date','1933 (New Deal)','Les lois AAA (agriculture) et NIRA (industrie).'],
+ ['date','1935 (New Deal)','Le Social Security Act : retraites après 65 ans, indemnités chômage, handicap.'],
+ ['date','1933-1935','Le Dust Bowl : tempêtes de poussière qui ravagent les champs du centre des USA.'],
+ ['date','1932 (chômage)','Allemagne 25 %, Angleterre 22 %, USA 24 %.'],
+ ['date','1930 (Amérique du Sud)','Coups d’État : Uriburu en Argentine, Vargas au Brésil.'],
+ ['date','1934 (Argentine)','Le plan Pinedo : planification et réactivation de l’économie.'],
+ ['date','14 avril 1931','Proclamation de la République espagnole, le roi Alphonse XIII s’exile.'],
+ ['date','1931-1933 / 1933-1935','Espagne : bienio des réformes (gauche), puis bienio noir (droite).'],
+ ['date','1936-1939','Guerre civile espagnole (Franco contre la République).'],
+ ['date','1936 (ou 1939)-1975','Dictature de Franco en Espagne.'],
+ ['date','8 janvier 1934','Stavisky est retrouvé mort à Chamonix : début du scandale.'],
+ ['date','6 février 1934','Émeutes des ligues d’extrême droite (antiparlementaires) à Paris : 19 morts, ~1 500 blessés.'],
+ ['date','1936-1938','Le Front populaire au pouvoir en France.'],
+ ['date','7-8 juin 1936','Les accords Matignon.'],
+ ['date','20-21 juin 1936','Les lois sur les congés payés (15 jours) et la semaine de 40 heures.'],
+ ['date','30 janvier 1933 (bonus)','Hitler devient chancelier en Allemagne.'],
+ ['perso','Herbert Hoover','Président républicain des USA (1929-1933). Libéral : il refuse que l’État intervienne, et la crise s’aggrave.'],
+ ['perso','Franklin D. Roosevelt','Président démocrate des USA (1933-1945), 32ᵉ président. Il lance le New Deal.'],
+ ['perso','Léon Blum','Socialiste (SFIO), président du Conseil du Front populaire en 1936. Présent aux accords Matignon.'],
+ ['perso','Maurice Thorez','Chef du Parti communiste français (PCF), membre de l’alliance du Front populaire.'],
+ ['perso','Édouard Daladier','Chef du Parti radical, membre du Front populaire. Il gouverne en 1938 : fin du Front populaire.'],
+ ['perso','Francisco Franco','Général espagnol : pronunciamiento de 1936, vainqueur de la guerre civile, dictateur jusqu’en 1975.'],
+ ['perso','Alphonse XIII','Roi d’Espagne. Il s’exile en 1931 lors de la proclamation de la République.'],
+ ['perso','Alexandre Stavisky','Escroc de Bayonne lié à des politiciens. Sa mort (janvier 1934) déclenche le scandale qui mène au 6 février 1934.'],
+ ['perso','Getúlio Vargas','Prend le pouvoir au Brésil en 1930 et dirige un régime autoritaire.'],
+ ['perso','José Félix Uriburu','Général, auteur du coup d’État de 1930 en Argentine.'],
+ ['perso','Federico Pinedo','Ministre argentin des Finances : plan de réactivation économique de 1934 (planification).'],
+ ['perso','John Maynard Keynes (bonus)','Économiste qui théorise la relance par la dépense publique (1936).'],
+ ['notion','Bulle spéculative','Hausse démesurée de la valeur de certains titres financiers, qui finit souvent par éclater lors d’un krach boursier.'],
+ ['notion','Krach boursier','Effondrement brutal des cours de la Bourse, qui s’étend aux autres pays car les marchés financiers sont reliés entre eux.'],
+ ['notion','New Deal','Politique interventionniste de Roosevelt pour soutenir les plus pauvres, lutter contre le chômage et relancer l’économie américaine.'],
+ ['notion','Protectionnisme','Politique qui protège l’économie nationale de la concurrence étrangère en augmentant les droits de douane et en réduisant les échanges.'],
+ ['notion','Front populaire','Alliance des partis de gauche (socialistes, communistes, radicaux) pour obtenir la majorité à l’Assemblée et gouverner.'],
+ ['notion','Déflation','Baisse générale des prix. Les gens attendent que les prix baissent encore et n’achètent plus.'],
+ ['notion','Thésaurisation','Garder son argent ou son or au lieu de le dépenser ou de l’investir. La monnaie circule moins.'],
+ ['notion','Crise de surproduction','On produit trop par rapport à ce qui peut être acheté : les invendus s’accumulent.'],
+ ['notion','Libéralisme','Doctrine selon laquelle l’économie se régule seule et l’État ne doit pas intervenir (Hoover).'],
+ ['notion','Interventionnisme','L’État intervient dans l’économie : dépenses, lois, contrôle des banques (Roosevelt).'],
+ ['notion','État-providence','État qui protège les citoyens contre les risques de la vie : chômage, vieillesse, handicap (Social Security Act).'],
+ ['notion','Grande Dépression','La grave crise économique des années 1930 qui suit le krach de 1929.'],
+ ['notion','Accords Matignon','Accords du 7-8 juin 1936 entre le patronat (CGPF) et la CGT : salaires +7 à 15 %, conventions collectives, délégués du personnel.'],
+ ['notion','Grèves joyeuses','Grèves massives avec occupations d’usines, dans une ambiance de fête (mai-juin 1936).'],
+ ['notion','Ligues','Mouvements d’extrême droite, antiparlementaires, à l’origine des émeutes du 6 février 1934.'],
+ ['notion','Pronunciamiento','Coup d’État militaire (Espagne, Amérique latine). Exemple : Franco en 1936.'],
+ ['notion','Planification','L’État fixe des objectifs de production à atteindre (plan Pinedo en Argentine).'],
+ ['notion','Rapatriement des capitaux','Les banques américaines récupèrent l’argent placé à l’étranger, ce qui provoque des faillites de banques étrangères.'],
+ ['chiffre','Chômage aux USA en 1932','24 %'],
+ ['chiffre','Recul des exportations mondiales en 1932 (par rapport à 1929)','−72 % en valeur (chiffre de votre cours).'],
+ ['chiffre','Hausse des salaires (accords Matignon)','De 7 % (salaires les plus élevés) à 15 % (salaires les plus bas).'],
+ ['chiffre','Congés payés en 1936','15 jours par an (dont 12 jours ouvrables).'],
+ ['chiffre','Durée du travail en 1936','Semaine de 40 heures.'],
+ ['chiffre','Part du crédit : combien fallait-il posséder pour emprunter ?','Seulement 10 % de la somme.'],
+ ['chiffre','Bilan du 6 février 1934','19 morts et près de 1 500 blessés.'],
+ ['meca','Pourquoi la bulle éclate-t-elle en 1929 ?','Les banques ont prêté sans précaution à des gens non solvables. Quand les financiers s’en rendent compte, tout le monde vend : c’est le krach.'],
+ ['meca','Les 5 étapes de la spirale de la crise','Faillite des banques → chute de la demande → fermeture des entreprises → chômage de masse → pauvreté et baisse de la consommation (et ça recommence).'],
+ ['meca','Les 2 canaux qui propagent la crise dans le monde','1) Les USA arrêtent d’acheter et d’investir à l’étranger. 2) Les banques américaines rapatrient leurs capitaux, et les banques étrangères font faillite. Le protectionnisme aggrave le tout.'],
+ ['meca','Pourquoi l’Amérique du Sud est-elle si touchée ?','Ses économies dépendent de l’exportation de produits bruts de faible valeur vers les USA. Quand les USA n’achètent plus, c’est l’effondrement.'],
+ ['meca','Les 3 axes du New Deal','Créer des emplois (grands travaux, AAA, NIRA), protéger les travailleurs (syndicats, Social Security) et réglementer l’économie (banques séparées).'],
+ ['meca','Pourquoi les réformes du Front populaire déçoivent-elles ?','L’inflation mange les hausses de salaires, les 40 heures réduisent la production, les exportations baissent et les capitaux fuient.'],
+ ['meca','Pourquoi le Front populaire est-il élu en 1936 ?','La crise économique, la peur du fascisme après le 6 février 1934, et ses promesses : résoudre la crise et améliorer la vie des travailleurs.']
+];
+CARDS.forEach((c,i)=>c.id=i);
+let fcKnown=new Set(store.get('known',[])),fcCats=new Set(Object.keys(CATS)),fcDeck=[],fcCur=null;
+$('#fc-cats').innerHTML=Object.entries(CATS).map(([k,v])=>`<button class="chip" aria-pressed="true" data-c="${k}">${v}</button>`).join('');
+$$('#fc-cats .chip').forEach(c=>c.onclick=()=>{const k=c.dataset.c;fcCats.has(k)&&fcCats.size>1?fcCats.delete(k):fcCats.add(k);$$('#fc-cats .chip').forEach(x=>x.setAttribute('aria-pressed',fcCats.has(x.dataset.c)));fcDeck=[];fcRender()});
+function fcPool(){return CARDS.filter(c=>fcCats.has(c[0]))}
+function fcRender(){
+  const pool=fcPool(),todo=pool.filter(c=>!fcKnown.has(c.id));
+  if(!fcDeck.length||!fcDeck.every(c=>todo.includes(c)))fcDeck=shuffle(todo);
+  fcDeck=fcDeck.filter(c=>todo.includes(c));
+  const done=pool.length-todo.length;
+  $('#fc-bar').style.width=(pool.length?done/pool.length*100:0)+'%';
+  $('#fc-count').textContent=`${done} / ${pool.length} maîtrisées · ${todo.length} restantes`;
+  $('#fc').classList.remove('flip');
+  fcCur=fcDeck[0];
+  if(!fcCur){$('#fc-tag').className='tag t-chiffre';$('#fc-tag').textContent='Bravo';$('#fc-q').textContent='Paquet terminé !';$('#fc-a').textContent='Changez de catégorie, activez le mode inversé ou remettez tout à zéro pour un nouveau tour.';$('#fc-yes').disabled=$('#fc-no').disabled=true;stats();return}
+  $('#fc-yes').disabled=$('#fc-no').disabled=false;
+  const rev=$('#fc-rev').checked;
+  $('#fc-tag').className='tag t-'+fcCur[0];$('#fc-tag').textContent=CATS[fcCur[0]];
+  $('#fc-q').textContent=rev?fcCur[2]:fcCur[1];
+  $('#fc-q').style.fontSize=rev?'clamp(1.05rem,3.4vw,1.3rem)':'';
+  $('#fc-q').style.fontFamily=rev?'var(--body)':'';
+  $('#fc-a').innerHTML=rev?`<b style="font-family:var(--display);font-size:1.8rem">${esc(fcCur[1])}</b>`:esc(fcCur[2]);
+  stats();
+}
+function fcAnswer(ok){if(!fcCur)return;if(ok){fcKnown.add(fcCur.id);store.set('known',[...fcKnown]);fcDeck.shift()}else{const c=fcDeck.shift();fcDeck.splice(Math.min(3,fcDeck.length),0,c)}fcRender()}
+$('#fc').onclick=()=>$('#fc').classList.toggle('flip');
+$('#fc-yes').onclick=()=>fcAnswer(true);$('#fc-no').onclick=()=>fcAnswer(false);
+$('#fc-rev').onchange=fcRender;
+$('#fc-reset').onclick=()=>{fcKnown=new Set();store.set('known',[]);fcDeck=[];fcRender();toast('Paquet remis à zéro')};
+document.addEventListener('keydown',e=>{if($('#t-flash').hidden||e.target.tagName==='INPUT')return;if(e.code==='Space'){e.preventDefault();$('#fc').classList.toggle('flip')}if(e.key==='ArrowRight')fcAnswer(true);if(e.key==='ArrowLeft')fcAnswer(false)});
+
+/* ---------- QUESTIONS (quiz + duel) ---------- */
+const QS=[
+ ['I','Quel jour est surnommé le « jeudi noir » ?',['24 octobre 1929','29 octobre 1929','6 février 1934','4 mars 1933'],'Le jeudi 24 octobre 1929 marque le début du krach. Le 29 est le « mardi noir ».'],
+ ['I','Dans quelle ville se produit le krach de 1929 ?',['New York (Wall Street)','Chicago','Washington','Londres'],'Wall Street est la Bourse de New York.'],
+ ['I','Qu’est-ce qu’une bulle spéculative ?',['Une hausse démesurée de la valeur de titres financiers, qui finit par éclater','Une baisse générale des prix','Une politique de droits de douane','Une alliance de partis de gauche'],'C’est la définition de la fiche objectifs.'],
+ ['I','Avant 1929, combien fallait-il posséder de la somme pour obtenir un crédit ?',['10 %','50 %','75 %','100 %'],'Seulement 10 % : les banques prêtaient sans précaution.'],
+ ['I','Qu’appelle-t-on un emprunteur « non solvable » ?',['Quelqu’un qui ne peut pas rembourser','Un banquier','Un actionnaire riche','Un chômeur indemnisé'],'Les prêts à des gens non solvables gonflent la bulle.'],
+ ['I','Qu’est-ce que la déflation ?',['Une baisse générale des prix','Une hausse générale des prix','Une hausse des salaires','La fermeture des frontières'],'Avec la déflation, on attend que les prix baissent encore avant d’acheter, donc la demande chute.'],
+ ['I','Quelle est la première étape de la spirale de la crise après le krach ?',['La faillite des banques','Le Dust Bowl','Le New Deal','Le protectionnisme'],'Les crédits ne sont pas remboursés, donc les banques font faillite.'],
+ ['I','Qui est président des USA au moment du krach ?',['Herbert Hoover','Franklin D. Roosevelt','Woodrow Wilson','Léon Blum'],'Hoover, républicain, est président de 1929 à 1933.'],
+ ['I','Quelle politique suit Hoover face à la crise ?',['Le libéralisme : l’État n’intervient pas','Le New Deal','La planification','Les accords Matignon'],'Il est fidèle au libéralisme : il laisse faire les banques et le marché.'],
+ ['I','Taux de chômage aux USA en 1932 ?',['24 %','5 %','12 %','50 %'],'24 % selon votre fiche (25 % en Allemagne, 22 % en Angleterre).'],
+ ['I','Qu’est-ce que le Dust Bowl ?',['Des tempêtes de poussière qui ravagent les champs du centre des USA (1933-1935)','Un match de football américain','Une loi du New Deal','Une banque new-yorkaise'],'Il pousse les fermiers ruinés à partir vers l’Ouest (Californie).'],
+ ['I','Vers où migrent les chômeurs et les agriculteurs américains ruinés ?',['Vers l’Ouest, surtout la Californie','Vers le Canada','Vers l’Europe','Vers le Mexique'],'Ils y cherchent du travail, souvent sans succès.'],
+ ['I','Comment les USA propagent-ils la crise aux banques étrangères ?',['En rapatriant leurs capitaux','En envoyant des soldats','En baissant leurs droits de douane','En prêtant plus'],'Les banques étrangères perdent cet argent et font faillite.'],
+ ['I','Qu’est-ce qu’une crise de surproduction ?',['On produit plus que ce qui peut être vendu','On ne produit plus rien','Les prix augmentent trop','Les banques prêtent trop'],'Les pauvres n’achètent plus, les invendus s’accumulent.'],
+ ['I','Quel est le parti de Roosevelt ?',['Démocrate','Républicain','Socialiste','Radical'],'Hoover est républicain, Roosevelt démocrate.'],
+ ['I','Roosevelt est le combientième président des USA ?',['32ᵉ','16ᵉ','1ᵉʳ','44ᵉ'],'Il est le 32ᵉ président, de 1933 à 1945.'],
+ ['I','« La seule chose dont nous devons avoir peur est… »',['… la peur elle-même','… la guerre','… le communisme','… la Bourse'],'La phrase célèbre du discours inaugural de mars 1933.'],
+ ['I','Que font l’AAA et la NIRA (1933) ?',['Elles régulent les prix agricoles et industriels et relancent l’emploi','Elles créent la Sécurité sociale','Elles ferment la Bourse','Elles augmentent les impôts des pauvres'],'Ce sont les deux grandes lois économiques de 1933.'],
+ ['I','Que crée le Social Security Act de 1935 ?',['Retraites, indemnités chômage, aide aux handicapés','Les congés payés','La semaine de 40 heures','Le protectionnisme'],'C’est le début de l’État-providence américain.'],
+ ['I','Pourquoi Roosevelt sépare-t-il les banques de dépôt et les banques d’affaires ?',['Pour que les difficultés des unes ne se propagent pas aux autres','Pour augmenter la spéculation','Pour sauver Hoover','Pour aider l’Europe'],'C’est l’axe « réglementer l’économie » du New Deal.'],
+ ['I','Qu’est-ce qui relance définitivement l’économie américaine ?',['La Seconde Guerre mondiale (économie de guerre)','Le krach','Le Dust Bowl','Le protectionnisme'],'Le New Deal ne suffit pas seul : les énormes besoins en matériel de guerre font repartir l’économie.'],
+ ['I','Dans le doc A (1936), qui critique le New Deal ?',['Le parti républicain','Le parti démocrate','Roosevelt lui-même','Les syndicats'],'C’est un programme électoral du camp adverse : à lire avec esprit critique.'],
+ ['II','Qu’est-ce que le protectionnisme ?',['Protéger l’économie nationale en augmentant les droits de douane','Protéger les travailleurs avec des syndicats','Protéger les banques avec des prêts','Protéger la démocratie'],'Il réduit les échanges et aggrave la crise.'],
+ ['II','En 1932, de combien reculent les exportations mondiales (par rapport à 1929) ?',['72 %','10 %','25 %','95 %'],'Chiffre de votre synthèse sur l’Amérique du Sud.'],
+ ['II','Pourquoi les économies d’Amérique du Sud sont-elles fragiles ?',['Elles dépendent de l’exportation de produits bruts vers les USA','Elles sont trop industrialisées','Elles n’ont pas de banques','Elles sont en guerre'],'Le café au Brésil, l’étain en Bolivie, le sucre à Cuba…'],
+ ['II','Qui prend le pouvoir au Brésil en 1930 ?',['Getúlio Vargas','Franco','José Félix Uriburu','Federico Pinedo'],'Uriburu, c’est en Argentine.'],
+ ['II','Qu’est-ce que le plan Pinedo (Argentine, 1934) ?',['Un plan de planification et de réactivation de l’économie','Un coup d’État','Une loi protectionniste américaine','Un accord salarial'],'L’État fixe des objectifs de production et diversifie l’économie.'],
+ ['II','Que réclame la pancarte du tableau argentin de 1934 ?',['« Du pain et du travail »','« Pain, paix, liberté »','« New Deal »','« Faillite ! Misère ! »'],'Elle illustre le chômage de masse en Amérique du Sud.'],
+ ['II','Taux de chômage en Allemagne en 1932 ?',['25 %','5 %','15 %','40 %'],'Allemagne 25 %, Angleterre 22 %, USA 24 %.'],
+ ['II','Quand la République espagnole est-elle proclamée ?',['14 avril 1931','24 octobre 1929','6 février 1934','7 juin 1936'],'Le roi Alphonse XIII s’exile.'],
+ ['II','Quel roi d’Espagne s’exile en 1931 ?',['Alphonse XIII','Louis XVI','Philippe V','Juan Carlos'],'Alphonse XIII.'],
+ ['II','Qu’est-ce que le « bienio noir » (1933-1935) ?',['Deux années de gouvernement de droite en Espagne','La crise en Allemagne','Le krach boursier','Deux années de grèves en France'],'Il suit le « bienio des réformes » (1931-1933).'],
+ ['II','Dates de la guerre civile espagnole ?',['1936-1939','1929-1933','1914-1918','1939-1945'],'Franco gagne et reste dictateur jusqu’en 1975.'],
+ ['II','Pourquoi la crise touche-t-elle la France plus tardivement ?',['Grâce aux échanges avec son empire colonial','Parce qu’elle n’a pas de Bourse','Grâce au New Deal','Parce qu’elle est communiste'],'Le marché colonial la protège quelque temps.'],
+ ['II','Qui organise la manifestation du 6 février 1934 ?',['Les ligues d’extrême droite','Le Front populaire','Les syndicats CGT','Les communistes'],'Une émeute antiparlementaire devant l’Assemblée nationale.'],
+ ['II','Quel scandale précède le 6 février 1934 ?',['L’affaire Stavisky','L’affaire Dreyfus','Le Watergate','L’affaire Pinedo'],'Stavisky, un escroc lié à des politiques, est retrouvé mort le 8 janvier 1934.'],
+ ['II','Quels partis forment le Front populaire en France ?',['Socialistes, communistes, radicaux','Républicains, démocrates','Ligues et radicaux','Communistes et monarchistes'],'Retenez B-T-D : Blum (SFIO), Thorez (PCF), Daladier (radicaux).'],
+ ['II','Qui est le chef du gouvernement du Front populaire en 1936 ?',['Léon Blum','Édouard Daladier','Maurice Thorez','Franklin D. Roosevelt'],'Léon Blum, socialiste, président du Conseil.'],
+ ['II','Quand sont signés les accords Matignon ?',['7-8 juin 1936','20-21 juin 1936','6 février 1934','3 mai 1936'],'Les 20-21 juin, ce sont les lois sur les congés payés et les 40 heures.'],
+ ['II','Qui signe les accords Matignon ?',['Le patronat (CGPF) et les syndicats (CGT)','Blum et Roosevelt','Franco et la République','Les ligues et la police'],'En présence de Léon Blum.'],
+ ['II','De combien augmentent les salaires avec les accords Matignon ?',['De 7 à 15 %','De 1 à 2 %','De 50 %','Ils baissent'],'15 % pour les salaires les plus bas, 7 % pour les plus élevés.'],
+ ['II','Combien de jours de congés payés sont accordés en 1936 ?',['15 jours','5 semaines','30 jours','Aucun'],'15 jours, dont 12 jours ouvrables.'],
+ ['II','Que dit l’affiche de la droite contre les accords Matignon ?',['« Faillite ! Misère ! » : la semaine de 40 heures va ruiner les exportations','« Vive les congés payés »','« Du pain et du travail »','« New Deal »'],'La droite critique le coût des réformes.'],
+ ['II','Pourquoi les réformes du Front populaire n’ont-elles pas l’effet espéré ?',['L’inflation annule les hausses de salaires et la production stagne','Il n’y a plus d’importations','Les ouvriers refusent les congés','Roosevelt s’y oppose'],'Attention : « il n’y a plus d’importations » est une erreur fréquente.'],
+ ['II','Que sont les « grèves joyeuses » ?',['Des grèves massives avec occupations d’usines en mai-juin 1936','Des fêtes pour la fin de la crise','Des manifestations des ligues','Des grèves aux USA'],'Elles poussent le patronat à négocier les accords Matignon.'],
+ ['II','Quand Hitler devient-il chancelier ?',['30 janvier 1933','6 février 1934','24 octobre 1929','1936'],'Bonus : la crise favorise la montée du nazisme.']
+];
+const partsOn=new Set(['I','II']);
+$('#quiz-parts').innerHTML=[['I','Partie I · USA'],['II','Partie II · le monde']].map(([k,v])=>`<button class="chip" aria-pressed="true" data-p="${k}">${v}</button>`).join('');
+$$('#quiz-parts .chip').forEach(c=>c.onclick=()=>{const k=c.dataset.p;partsOn.has(k)&&partsOn.size>1?partsOn.delete(k):partsOn.add(k);$$('#quiz-parts .chip').forEach(x=>x.setAttribute('aria-pressed',partsOn.has(x.dataset.p)))});
+function mkQ(q){const opts=shuffle(q[2]);return{part:q[0],text:q[1],opts,ans:q[2][0],expl:q[3]}}
+
+/* ---------- QUIZ ---------- */
+let qz=null,qTimer=null;
+$('#quiz-go').onclick=()=>{qz={list:shuffle(QS.filter(q=>partsOn.has(q[0]))).slice(0,12).map(mkQ),i:0,score:0};$('#quiz-start').hidden=true;$('#quiz-box').hidden=false;qDraw()};
+function qDraw(){
+  clearInterval(qTimer);const q=qz.list[qz.i];
+  $('#quiz-box').innerHTML=`<div class="row" style="justify-content:space-between"><span class="eyebrow">Question ${qz.i+1}/${qz.list.length} · Partie ${q.part}</span><span class="tag t-chiffre">Score : ${qz.score}</span></div>
+  <div class="qtimer"><i id="qt"></i></div><div class="q-text">${esc(q.text)}</div>
+  <div class="opts">${q.opts.map((o,i)=>`<button class="opt" data-i="${i}">${esc(o)}</button>`).join('')}</div><div id="qfb"></div>`;
+  $$('#quiz-box .opt').forEach(b=>b.onclick=()=>qAnswer(q.opts[+b.dataset.i]));
+  let left=150;qTimer=setInterval(()=>{left--;const el=$('#qt');if(el)el.style.width=(left/150*100)+'%';if(left<=0){clearInterval(qTimer);qAnswer(null)}},100);
+}
+function qAnswer(choice){
+  clearInterval(qTimer);const q=qz.list[qz.i],ok=choice===q.ans;if(ok)qz.score++;
+  $$('#quiz-box .opt').forEach(b=>{const o=q.opts[+b.dataset.i];b.disabled=true;if(o===q.ans)b.classList.add('ok');else if(o===choice)b.classList.add('ko')});
+  $('#qfb').innerHTML=`<div class="expl"><b>${ok?'Bonne réponse !':choice===null?'Temps écoulé.':'Raté.'}</b> ${esc(q.expl)}</div><div style="margin-top:12px"><button class="btn blue" id="qnext">${qz.i+1<qz.list.length?'Question suivante':'Voir mon score'}</button></div>`;
+  $('#qnext').onclick=()=>{qz.i++;qz.i<qz.list.length?qDraw():qEnd()};$('#qnext').focus();
+}
+function qEnd(){
+  const s=qz.score,n=qz.list.length,best=store.get('best',0);if(s>best)store.set('best',s);
+  const msg=s>=11?'Prêt pour le contrôle.':s>=8?'Solide ! Revoyez les explications ratées.':s>=5?'On y est presque : un tour de flashcards et on recommence.':'Relisez le cours (onglet Cours) puis recommencez.';
+  $('#quiz-box').innerHTML=`<div class="eyebrow">Résultat</div><div class="scorebig">${s}/${n}</div><p style="font-weight:700">${msg}</p><div class="row"><button class="btn blue" id="qagain">Rejouer</button><button class="btn alt" id="qback">Changer de parties</button></div>`;
+  $('#qagain').onclick=()=>$('#quiz-go').click();$('#qback').onclick=()=>{$('#quiz-box').hidden=true;$('#quiz-start').hidden=false};stats();
+}
+
+/* ---------- DUEL ---------- */
+let dl=null;
+$('#duel-go').onclick=()=>{
+  dl={names:[$('#dn1').value.trim()||'Joueur 1',$('#dn2').value.trim()||'Joueur 2'],score:[0,0],list:shuffle(QS).slice(0,10).map(mkQ),i:0,phase:'q',who:null,tried:[],flat:$('#dflat').checked};
+  $('#duel-setup').hidden=true;$('#duel-arena').hidden=false;dDraw();
+};
+function dHalf(p){
+  const q=dl.list[dl.i],me=dl.phase==='a'&&dl.who===p,other=dl.phase==='a'&&dl.who!==p;
+  let body='';
+  if(dl.phase==='q'){body=dl.tried.includes(p)?`<div class="waitmsg">Raté… à l’autre de buzzer.</div>`:`<button class="buzz" data-buzz="${p}">BUZZ !</button>`}
+  else if(me){body=`<div class="opts">${q.opts.map((o,i)=>`<button class="opt" data-da="${i}" ${dl.bad&&dl.bad.includes(o)?'disabled':''}>${esc(o)}</button>`).join('')}</div>`}
+  else if(other){body=`<div class="waitmsg">${esc(dl.names[dl.who])} répond…</div>`}
+  else if(dl.phase==='r'){body=`<div class="expl"><b>Réponse : ${esc(q.ans)}</b><br>${esc(q.expl)}</div>`}
+  return `<div class="half p${p+1}"><div class="hd"><span>${esc(dl.names[p])}</span><span class="sc">${dl.score[p]}</span></div><div class="qq">${esc(q.text)}</div>${body}</div>`;
+}
+function dDraw(){
+  if(dl.i>=dl.list.length)return dEnd();
+  const mid=dl.phase==='r'?`<span class="eyebrow">${dl.last||''}</span><button class="btn" id="dnext">${dl.i+1<dl.list.length?'Question suivante':'Résultat final'}</button>`:`<span class="eyebrow">Question ${dl.i+1}/10</span><button class="btn alt" id="dskip" style="padding:6px 12px">Personne ne sait → réponse</button>`;
+  $('#duel-arena').innerHTML=`<div class="arena ${dl.flat?'flat':''}">${dHalf(0)}<div class="mid">${mid}<button class="btn alt" id="dquit" style="padding:6px 12px">Quitter</button></div>${dHalf(1)}</div>`;
+  $$('[data-buzz]').forEach(b=>b.onclick=()=>dBuzz(+b.dataset.buzz));
+  $$('[data-da]').forEach(b=>b.onclick=()=>dAns(dl.list[dl.i].opts[+b.dataset.da]));
+  const n=$('#dnext');if(n)n.onclick=()=>{dl.i++;dl.phase='q';dl.who=null;dl.tried=[];dl.bad=[];dl.last='';dDraw()};
+  const s=$('#dskip');if(s)s.onclick=()=>{dl.phase='r';dl.last='Personne ne marque';dDraw()};
+  $('#dquit').onclick=()=>{$('#duel-arena').hidden=true;$('#duel-setup').hidden=false};
+}
+function dBuzz(p){if(dl.phase!=='q'||dl.tried.includes(p))return;dl.phase='a';dl.who=p;dDraw()}
+function dAns(o){
+  const q=dl.list[dl.i],p=dl.who;
+  if(o===q.ans){dl.score[p]++;dl.phase='r';dl.last=`+1 pour ${dl.names[p]} !`}
+  else{dl.tried.push(p);dl.bad=[...(dl.bad||[]),o];
+    if(dl.tried.length>=2){dl.phase='r';dl.last='Raté des deux côtés'}else{dl.phase='q';dl.who=null;toast(`Faux ! ${dl.names[1-p]} peut buzzer`)}}
+  dDraw();
+}
+function dEnd(){
+  const [a,b]=dl.score,w=a===b?'Égalité parfaite !':`${dl.names[a>b?0:1]} gagne !`;
+  store.set('duel',`${a}-${b}`);
+  $('#duel-arena').innerHTML=`<div class="card stack" style="text-align:center"><div class="eyebrow">Fin du duel</div><div class="scorebig">${a} – ${b}</div><h2>${esc(w)}</h2><p class="muted">Le perdant explique à voix haute 2 questions ratées (onglet Défi oral).</p><div class="row" style="justify-content:center"><button class="btn gold" id="drev">Revanche</button><button class="btn alt" id="dset">Changer les noms</button></div></div>`;
+  $('#drev').onclick=()=>$('#duel-go').click();$('#dset').onclick=()=>{$('#duel-arena').hidden=true;$('#duel-setup').hidden=false};stats();
+}
+document.addEventListener('keydown',e=>{if(!dl||$('#t-duel').hidden||$('#duel-arena').hidden||e.target.tagName==='INPUT')return;if(e.key==='a'||e.key==='A')dBuzz(0);if(e.key==='l'||e.key==='L')dBuzz(1)});
+
+/* ---------- ORAL ---------- */
+const ORAL=[
+ ['Quel processus économique explique le krach boursier de 1929 ?',['années 1920 / essor','crédit','banques sans précaution','10 %','non solvables','bulle spéculative','24 octobre 1929','tout le monde vend']],
+ ['Comment le krach boursier se transforme-t-il en crise économique ?',['faillite des banques','chute de la demande','déflation','fermeture des entreprises','chômage de masse','pauvreté','spirale / cercle vicieux','24 % en 1932']],
+ ['Comment Roosevelt tente-t-il de résorber la crise dans le cadre du New Deal ?',['1933','interventionnisme','dépense publique','grands travaux','AAA / NIRA','syndicats','Social Security 1935','contrôle des banques']],
+ ['Comment la crise atteint-elle le reste du monde ?',['arrêt des achats','arrêt des investissements','rapatriement des capitaux','faillite des banques étrangères','protectionnisme','droits de douane','−72 % exportations']],
+ ['Quelles sont les conséquences de la crise en Amérique du Sud ?',['produits bruts','dépendance aux USA','chômage de masse','coups d’État','Vargas','Uriburu','régimes autoritaires','plan Pinedo / planification']],
+ ['Quelles sont les conséquences de la crise en Europe ?',['chômage 25 % Allemagne','22 % Angleterre','République espagnole 1931','Franco','guerre civile 1936-1939','Stavisky','6 février 1934','Front populaire']],
+ ['Pourquoi le Front populaire est-il élu en 1936, et quelles mesures prend-il ?',['crise économique','peur du fascisme','socialistes-communistes-radicaux','Léon Blum','grèves joyeuses','accords Matignon','salaires +7 à 15 %','congés payés','40 heures']],
+ ['Comparez le New Deal et le Front populaire.',['intervention de l’État','relancer la consommation','1933 vs 1936','protéger les travailleurs','critiques de la droite','résultats limités','démocraties']],
+ ['Comparez Hoover et Roosevelt face à la crise.',['républicain / démocrate','libéralisme / interventionnisme','laisser-faire','New Deal','1929-1933 / 1933-1945','chômage 24 %']],
+ ['Comparez les réponses à la crise en Amérique du Sud et aux USA.',['autoritaire vs démocratique','coups d’État','usage de la force','planification','New Deal','l’État intervient dans les deux cas']]
+];
+let orI=0,orT=null,orLeft=90;
+function oralDraw(){
+  clearInterval(orT);orLeft=90;const o=ORAL[orI];
+  $('#oral-box').innerHTML=`<div class="row" style="justify-content:space-between"><span class="eyebrow">Défi ${orI+1}/${ORAL.length}</span><span class="mono" id="or-clock" style="font-size:1.6rem;font-weight:600">1:30</span></div>
+  <div class="oral-q">${esc(o[0])}</div>
+  <div class="eyebrow">Mots-clés à entendre (pour l’auditeur)</div>
+  <div class="kw blur" id="or-kw">${o[1].map((k,i)=>`<label><input type="checkbox" id="kw${i}"> ${esc(k)}</label>`).join('')}</div>
+  <div class="row"><button class="btn green" id="or-go">Démarrer les 90 s (affiche les mots-clés)</button><button class="btn alt" id="or-next">Défi suivant</button><button class="btn alt" id="or-rand">Au hasard</button></div>
+  <p id="or-res" style="font-weight:700"></p>`;
+  $('#or-go').onclick=()=>{$('#or-kw').classList.remove('blur');$('#or-go').disabled=true;orT=setInterval(()=>{orLeft--;$('#or-clock').textContent=`${Math.floor(orLeft/60)}:${String(orLeft%60).padStart(2,'0')}`;if(orLeft<=0){clearInterval(orT);const n=$$('#or-kw input:checked').length;$('#or-res').textContent=`Temps écoulé : ${n}/${o[1].length} mots-clés. ${n>=o[1].length-1?'Excellent !':n>=o[1].length/2?'Bien, complétez avec les mots oubliés.':'Relisez la partie du cours, puis retentez.'}`}},1000)};
+  $('#or-next').onclick=()=>{orI=(orI+1)%ORAL.length;oralDraw()};
+  $('#or-rand').onclick=()=>{orI=Math.floor(Math.random()*ORAL.length);oralDraw()};
+}
+oralDraw();
+
+/* ---------- METHODE ---------- */
+$$('[data-open]').forEach(b=>b.onclick=()=>$('#'+b.dataset.open).classList.add('open'));
+const CHECK=['Accroche ou présentation du document (nature, auteur, date, destinataire)','Contexte : dates et lieux précis','Les notions du sujet sont définies','Une problématique sous forme de question + le plan annoncé','2 parties × 2 sous-parties, reliées par des transitions','Chaque paragraphe : idée → notion ou citation → exemple ou explication','Au moins 5 dates précises (24 oct. 1929, 1933, 6 fév. 1934, 7-8 juin 1936…)','Au moins 4 personnages (Hoover, Roosevelt, Blum, Franco, Vargas…)','Des chiffres (24 %, −72 %, 7 à 15 %, 15 jours, 40 h)','Commentaire : esprit critique sur la source (qui parle, dans quel but ?)','Conclusion : réponse à la problématique + ouverture'];
+let chk=store.get('check',[]);
+$('#checklist').innerHTML=CHECK.map((c,i)=>`<label class="row" style="gap:10px;font-weight:700;align-items:flex-start"><input type="checkbox" id="ck${i}" data-ck="${i}" style="width:20px;height:20px;accent-color:var(--green);margin-top:2px" ${chk.includes(i)?'checked':''}> <span>${esc(c)}</span></label>`).join('');
+$$('[data-ck]').forEach(c=>c.onchange=()=>{const i=+c.dataset.ck;chk=c.checked?[...new Set([...chk,i])]:chk.filter(x=>x!==i);store.set('check',chk)});
+
+/* ---------- stats ---------- */
+function stats(){
+  const k=fcKnown.size;$('#st-cards').textContent=`${k}/${CARDS.length}`;
+  $('#pill').textContent=`${k} carte${k>1?'s':''} maîtrisée${k>1?'s':''}`;
+  const b=store.get('best',null);$('#st-quiz').textContent=b==null?'–':`${b}/12`;
+  $('#st-plan').textContent=`${planDone.length}/${PLAN.length}`;
+  $('#st-duel').textContent=store.get('duel','–');
+}
+
+renderPlan();fcRender();stats();
+const h=(location.hash||'').slice(1);const tabs=['accueil','cours','frise','flash','quiz','duel','oral','methode'];
+showTab(tabs.includes(h)?h:(store.get('tab','accueil')));
+</script>
