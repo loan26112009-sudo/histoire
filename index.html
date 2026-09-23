@@ -579,7 +579,7 @@ footer{padding:30px 16px;text-align:center;color:var(--muted);font-size:.85rem}
   <div class="card stack" id="quiz-start">
     <div class="eyebrow">Solo · 15 secondes par question</div>
     <h2>Le quiz chrono</h2>
-    <p class="muted">12 questions tirées au hasard. Chaque réponse est expliquée : lisez les explications, c’est là qu’on apprend.</p>
+    <p class="muted">12 questions sur l’essentiel, tirées au hasard. Chaque réponse est expliquée : lisez les explications, c’est là qu’on apprend.</p>
     <div class="filters" id="quiz-parts"></div>
     <div><button class="btn blue" id="quiz-go">Lancer le quiz</button></div>
   </div>
@@ -825,75 +825,34 @@ $('#ord-matignon').onclick=()=>ordStart(['Affaire Stavisky (janv. 1934)','Émeut
 /* ---------- FLASHCARDS ---------- */
 const CATS={date:'Dates',perso:'Personnages',notion:'Notions',chiffre:'Chiffres',meca:'Expliquer'};
 const CARDS=[
- ['date','24 octobre 1929','Le « jeudi noir » : début du krach à Wall Street (13 millions d’actions vendues).'],
- ['date','24, 28 et 29 octobre 1929','Les 3 jours du krach boursier : jeudi noir, lundi noir, mardi noir.'],
- ['date','1929-1933','Présidence de Herbert Hoover (républicain), qui laisse faire le marché.'],
- ['date','Novembre 1932','Élection de Franklin D. Roosevelt (démocrate) contre Hoover.'],
- ['date','Mars 1933','Discours d’investiture de Roosevelt : « la seule chose dont nous devons avoir peur est la peur elle-même ».'],
- ['date','1933-1945','Franklin D. Roosevelt, président des USA (élu 4 fois, mort en fonction).'],
- ['date','1933 (New Deal)','Les lois AAA (agriculture) et NIRA (industrie).'],
- ['date','1935 (New Deal)','Le Social Security Act : retraites après 65 ans, indemnités chômage, handicap.'],
+ ['date','24, 28 et 29 octobre 1929','Le krach boursier de Wall Street (New York). Le 24 = le « jeudi noir ».'],
  ['date','1933-1935','Le Dust Bowl : tempêtes de poussière qui ravagent les champs du centre des USA.'],
- ['date','1932 (chômage)','Allemagne 25 %, Angleterre 22 %, USA 24 %.'],
- ['date','1930 (Amérique du Sud)','Coups d’État : Uriburu en Argentine, Vargas au Brésil.'],
- ['date','1934 (Argentine)','Le plan Pinedo : planification et réactivation de l’économie.'],
- ['date','14 avril 1931','Proclamation de la République espagnole, le roi Alphonse XIII s’exile.'],
- ['date','1931-1933 / 1933-1935','Espagne : bienio des réformes (gauche), puis bienio noir (droite).'],
- ['date','1936-1939','Guerre civile espagnole (Franco contre la République).'],
- ['date','1936 (ou 1939)-1975','Dictature de Franco en Espagne.'],
- ['date','8 janvier 1934','Stavisky est retrouvé mort à Chamonix : début du scandale.'],
- ['date','6 février 1934','Émeutes des ligues d’extrême droite (antiparlementaires) à Paris : 19 morts, ~1 500 blessés.'],
+ ['date','1933-1945','Franklin D. Roosevelt, président des USA. Il lance le New Deal.'],
+ ['date','1932 : taux de chômage','Allemagne 25 % · Angleterre 22 % · USA 24 %.'],
+ ['date','6 février 1934','Émeutes des ligues d’extrême droite (fascistes, antiparlementaires) à Paris.'],
+ ['date','1936-1939','Guerre civile espagnole.'],
+ ['date','1936-1975','Franco, dictateur espagnol.'],
  ['date','1936-1938','Le Front populaire au pouvoir en France.'],
- ['date','7-8 juin 1936','Les accords Matignon.'],
- ['date','20-21 juin 1936','Les lois sur les congés payés (15 jours) et la semaine de 40 heures.'],
- ['date','30 janvier 1933 (bonus)','Hitler devient chancelier en Allemagne.'],
- ['perso','Herbert Hoover','Président républicain des USA (1929-1933). Libéral : il refuse que l’État intervienne, et la crise s’aggrave.'],
- ['perso','Franklin D. Roosevelt','Président démocrate des USA (1933-1945), 32ᵉ président. Il lance le New Deal.'],
- ['perso','Léon Blum','Socialiste (SFIO), président du Conseil du Front populaire en 1936. Présent aux accords Matignon.'],
- ['perso','Maurice Thorez','Chef du Parti communiste français (PCF), membre de l’alliance du Front populaire.'],
- ['perso','Édouard Daladier','Chef du Parti radical, membre du Front populaire. Il gouverne en 1938 : fin du Front populaire.'],
- ['perso','Francisco Franco','Général espagnol : pronunciamiento de 1936, vainqueur de la guerre civile, dictateur jusqu’en 1975.'],
- ['perso','Alphonse XIII','Roi d’Espagne. Il s’exile en 1931 lors de la proclamation de la République.'],
- ['perso','Alexandre Stavisky','Escroc de Bayonne lié à des politiciens. Sa mort (janvier 1934) déclenche le scandale qui mène au 6 février 1934.'],
- ['perso','Getúlio Vargas','Prend le pouvoir au Brésil en 1930 et dirige un régime autoritaire.'],
- ['perso','José Félix Uriburu','Général, auteur du coup d’État de 1930 en Argentine.'],
- ['perso','Federico Pinedo','Ministre argentin des Finances : plan de réactivation économique de 1934 (planification).'],
- ['perso','John Maynard Keynes (bonus)','Économiste qui théorise la relance par la dépense publique (1936).'],
+ ['date','7 et 8 juin 1936','Les accords Matignon.'],
+ ['perso','Herbert Hoover','Président des USA au moment du krach (1929-1933). Il ne fait rien : il laisse faire le marché (libéralisme).'],
+ ['perso','Franklin D. Roosevelt','Président des USA (1933-1945). Il lance le New Deal.'],
+ ['perso','Léon Blum','Socialiste, président du Conseil (chef du gouvernement) du Front populaire en 1936.'],
+ ['perso','Franco','Général espagnol : guerre civile (1936-1939), puis dictateur jusqu’en 1975.'],
  ['notion','Bulle spéculative','Hausse démesurée de la valeur de certains titres financiers, qui finit souvent par éclater lors d’un krach boursier.'],
  ['notion','Krach boursier','Effondrement brutal des cours de la Bourse, qui s’étend aux autres pays car les marchés financiers sont reliés entre eux.'],
  ['notion','New Deal','Politique interventionniste de Roosevelt pour soutenir les plus pauvres, lutter contre le chômage et relancer l’économie américaine.'],
- ['notion','Protectionnisme','Politique qui protège l’économie nationale de la concurrence étrangère en augmentant les droits de douane et en réduisant les échanges.'],
- ['notion','Front populaire','Alliance des partis de gauche (socialistes, communistes, radicaux) pour obtenir la majorité à l’Assemblée et gouverner.'],
- ['notion','Déflation','Baisse générale des prix. Les gens attendent que les prix baissent encore et n’achètent plus.'],
- ['notion','Thésaurisation','Garder son argent ou son or au lieu de le dépenser ou de l’investir. La monnaie circule moins.'],
- ['notion','Crise de surproduction','On produit trop par rapport à ce qui peut être acheté : les invendus s’accumulent.'],
- ['notion','Libéralisme','Doctrine selon laquelle l’économie se régule seule et l’État ne doit pas intervenir (Hoover).'],
- ['notion','Interventionnisme','L’État intervient dans l’économie : dépenses, lois, contrôle des banques (Roosevelt).'],
- ['notion','État-providence','État qui protège les citoyens contre les risques de la vie : chômage, vieillesse, handicap (Social Security Act).'],
- ['notion','Grande Dépression','La grave crise économique des années 1930 qui suit le krach de 1929.'],
- ['notion','Accords Matignon','Accords du 7-8 juin 1936 entre le patronat (CGPF) et la CGT : salaires +7 à 15 %, conventions collectives, délégués du personnel.'],
- ['notion','Grèves joyeuses','Grèves massives avec occupations d’usines, dans une ambiance de fête (mai-juin 1936).'],
- ['notion','Ligues','Mouvements d’extrême droite, antiparlementaires, à l’origine des émeutes du 6 février 1934.'],
- ['notion','Pronunciamiento','Coup d’État militaire (Espagne, Amérique latine). Exemple : Franco en 1936.'],
- ['notion','Planification','L’État fixe des objectifs de production à atteindre (plan Pinedo en Argentine).'],
- ['notion','Rapatriement des capitaux','Les banques américaines récupèrent l’argent placé à l’étranger, ce qui provoque des faillites de banques étrangères.'],
- ['chiffre','Chômage aux USA en 1932','24 %'],
- ['chiffre','Recul des exportations mondiales en 1932 (par rapport à 1929)','−72 % en valeur (chiffre de votre cours).'],
- ['chiffre','Hausse des salaires (accords Matignon)','De 7 % (salaires les plus élevés) à 15 % (salaires les plus bas).'],
- ['chiffre','Congés payés en 1936','15 jours par an (dont 12 jours ouvrables).'],
- ['chiffre','Durée du travail en 1936','Semaine de 40 heures.'],
- ['chiffre','Part du crédit : combien fallait-il posséder pour emprunter ?','Seulement 10 % de la somme.'],
- ['chiffre','Bilan du 6 février 1934','19 morts et près de 1 500 blessés.'],
- ['meca','Pourquoi la bulle éclate-t-elle en 1929 ?','Les banques ont prêté sans précaution à des gens non solvables. Quand les financiers s’en rendent compte, tout le monde vend : c’est le krach.'],
- ['meca','Les 5 étapes de la spirale de la crise','Faillite des banques → chute de la demande → fermeture des entreprises → chômage de masse → pauvreté et baisse de la consommation (et ça recommence).'],
- ['meca','Les 2 canaux qui propagent la crise dans le monde','1) Les USA arrêtent d’acheter et d’investir à l’étranger. 2) Les banques américaines rapatrient leurs capitaux, et les banques étrangères font faillite. Le protectionnisme aggrave le tout.'],
- ['meca','Pourquoi l’Amérique du Sud est-elle si touchée ?','Ses économies dépendent de l’exportation de produits bruts de faible valeur vers les USA. Quand les USA n’achètent plus, c’est l’effondrement.'],
- ['meca','Les 3 axes du New Deal','Créer des emplois (grands travaux, AAA, NIRA), protéger les travailleurs (syndicats, Social Security) et réglementer l’économie (banques séparées).'],
- ['meca','Pourquoi les réformes du Front populaire déçoivent-elles ?','L’inflation mange les hausses de salaires, les 40 heures réduisent la production, les exportations baissent et les capitaux fuient.'],
- ['meca','Pourquoi le Front populaire est-il élu en 1936 ?','La crise économique, la peur du fascisme après le 6 février 1934, et ses promesses : résoudre la crise et améliorer la vie des travailleurs.']
+ ['notion','Protectionnisme','Protéger l’économie nationale de la concurrence étrangère en augmentant les droits de douane et en réduisant les échanges.'],
+ ['notion','Front populaire','Alliance des partis de gauche pour obtenir la majorité à l’Assemblée et gouverner.'],
+ ['meca','Quel processus explique le krach de 1929 ?','Dans les années 1920, tout le monde emprunte. Les banques prêtent sans précaution, même à des gens qui ne pourront pas rembourser : c’est la bulle. Quand on s’en rend compte, tout le monde vend : c’est le krach.'],
+ ['meca','Comment le krach devient-il une crise économique ?','C’est la spirale : faillite des banques → plus personne n’achète → les entreprises ferment → chômage → pauvreté → on achète encore moins.'],
+ ['meca','Que fait Roosevelt avec le New Deal ?','L’État dépense pour relancer l’économie : grands travaux pour créer des emplois, aides sociales (retraites, chômage) et contrôle des banques.'],
+ ['meca','Comment la crise atteint-elle le reste du monde ?','Les USA arrêtent d’acheter et rapatrient leur argent placé à l’étranger. Tous les pays se ferment (protectionnisme), et le commerce mondial s’effondre.'],
+ ['meca','Conséquences de la crise en Amérique du Sud ?','Ces pays vivent de l’exportation de produits agricoles vers les USA. Sans acheteurs : chômage de masse, puis coups d’État et dictatures.'],
+ ['meca','Conséquences de la crise en Europe ?','Chômage massif. En Espagne : guerre civile, puis dictature de Franco. En France : émeutes du 6 février 1934, puis victoire du Front populaire.'],
+ ['meca','Pourquoi le Front populaire est-il élu en 1936, et que fait-il ?','Élu à cause de la crise et de la peur du fascisme (6 février 1934). Mesures : accords Matignon (hausse des salaires), 15 jours de congés payés, semaine de 40 heures.']
 ];
 CARDS.forEach((c,i)=>c.id=i);
-let fcKnown=new Set(store.get('known',[])),fcCats=new Set(Object.keys(CATS)),fcDeck=[],fcCur=null;
+let fcKnown=new Set(store.get('known2',[])),fcCats=new Set(Object.keys(CATS)),fcDeck=[],fcCur=null;
 let fcCat=store.get('fccat','all');
 $('#fc-cats').innerHTML=[['all','Toutes']].concat(Object.entries(CATS)).map(([k,v])=>`<button class="chip" data-c="${k}">${v}</button>`).join('');
 function fcChips(){$$('#fc-cats .chip').forEach(x=>x.setAttribute('aria-pressed',x.dataset.c===fcCat))}
@@ -929,7 +888,7 @@ function fcRender(){
 function fcAnswer(ok){
   if(!fcCur||!fcFlipped)return;
   const c=fcDeck.shift();
-  if(ok){fcKnown.add(c.id);store.set('known',[...fcKnown])}else fcDeck.push(c);
+  if(ok){fcKnown.add(c.id);store.set('known2',[...fcKnown])}else fcDeck.push(c);
   fcRender();
 }
 $('#fc').onclick=()=>{if(fcCur)fcSetFlip(!fcFlipped)};
@@ -939,58 +898,34 @@ let fcResetArm=null;
 $('#fc-reset').onclick=()=>{
   if(!fcResetArm){$('#fc-reset').textContent='Sûr ? Toucher encore pour tout effacer';$('#fc-reset').classList.add('red');fcResetArm=setTimeout(()=>{fcResetArm=null;$('#fc-reset').textContent='Remettre tout à zéro';$('#fc-reset').classList.remove('red')},3000);return}
   clearTimeout(fcResetArm);fcResetArm=null;$('#fc-reset').textContent='Remettre tout à zéro';$('#fc-reset').classList.remove('red');
-  fcKnown=new Set();store.set('known',[]);fcDeck=[];fcRender();toast('Paquet remis à zéro');
+  fcKnown=new Set();store.set('known2',[]);fcDeck=[];fcRender();toast('Paquet remis à zéro');
 };
 document.addEventListener('keydown',e=>{if($('#t-flash').hidden||e.target.tagName==='INPUT')return;if(e.code==='Space'){e.preventDefault();if(document.activeElement)document.activeElement.blur();$('#fc').click()}if(e.key==='ArrowRight')fcAnswer(true);if(e.key==='ArrowLeft')fcAnswer(false)});
 
 /* ---------- QUESTIONS (quiz + duel) ---------- */
 const QS=[
- ['I','Quel jour est surnommé le « jeudi noir » ?',['24 octobre 1929','29 octobre 1929','6 février 1934','4 mars 1933'],'Le jeudi 24 octobre 1929 marque le début du krach. Le 29 est le « mardi noir ».'],
- ['I','Dans quelle ville se produit le krach de 1929 ?',['New York (Wall Street)','Chicago','Washington','Londres'],'Wall Street est la Bourse de New York.'],
- ['I','Qu’est-ce qu’une bulle spéculative ?',['Une hausse démesurée de la valeur de titres financiers, qui finit par éclater','Une baisse générale des prix','Une politique de droits de douane','Une alliance de partis de gauche'],'C’est la définition de la fiche objectifs.'],
- ['I','Avant 1929, combien fallait-il posséder de la somme pour obtenir un crédit ?',['10 %','50 %','75 %','100 %'],'Seulement 10 % : les banques prêtaient sans précaution.'],
- ['I','Qu’appelle-t-on un emprunteur « non solvable » ?',['Quelqu’un qui ne peut pas rembourser','Un banquier','Un actionnaire riche','Un chômeur indemnisé'],'Les prêts à des gens non solvables gonflent la bulle.'],
- ['I','Qu’est-ce que la déflation ?',['Une baisse générale des prix','Une hausse générale des prix','Une hausse des salaires','La fermeture des frontières'],'Avec la déflation, on attend que les prix baissent encore avant d’acheter, donc la demande chute.'],
- ['I','Quelle est la première étape de la spirale de la crise après le krach ?',['La faillite des banques','Le Dust Bowl','Le New Deal','Le protectionnisme'],'Les crédits ne sont pas remboursés, donc les banques font faillite.'],
- ['I','Qui est président des USA au moment du krach ?',['Herbert Hoover','Franklin D. Roosevelt','Woodrow Wilson','Léon Blum'],'Hoover, républicain, est président de 1929 à 1933.'],
- ['I','Quelle politique suit Hoover face à la crise ?',['Le libéralisme : l’État n’intervient pas','Le New Deal','La planification','Les accords Matignon'],'Il est fidèle au libéralisme : il laisse faire les banques et le marché.'],
- ['I','Taux de chômage aux USA en 1932 ?',['24 %','5 %','12 %','50 %'],'24 % selon votre fiche (25 % en Allemagne, 22 % en Angleterre).'],
- ['I','Qu’est-ce que le Dust Bowl ?',['Des tempêtes de poussière qui ravagent les champs du centre des USA (1933-1935)','Un match de football américain','Une loi du New Deal','Une banque new-yorkaise'],'Il pousse les fermiers ruinés à partir vers l’Ouest (Californie).'],
- ['I','Vers où migrent les chômeurs et les agriculteurs américains ruinés ?',['Vers l’Ouest, surtout la Californie','Vers le Canada','Vers l’Europe','Vers le Mexique'],'Ils y cherchent du travail, souvent sans succès.'],
- ['I','Comment les USA propagent-ils la crise aux banques étrangères ?',['En rapatriant leurs capitaux','En envoyant des soldats','En baissant leurs droits de douane','En prêtant plus'],'Les banques étrangères perdent cet argent et font faillite.'],
- ['I','Qu’est-ce qu’une crise de surproduction ?',['On produit plus que ce qui peut être vendu','On ne produit plus rien','Les prix augmentent trop','Les banques prêtent trop'],'Les pauvres n’achètent plus, les invendus s’accumulent.'],
- ['I','Quel est le parti de Roosevelt ?',['Démocrate','Républicain','Socialiste','Radical'],'Hoover est républicain, Roosevelt démocrate.'],
- ['I','Roosevelt est le combientième président des USA ?',['32ᵉ','16ᵉ','1ᵉʳ','44ᵉ'],'Il est le 32ᵉ président, de 1933 à 1945.'],
- ['I','« La seule chose dont nous devons avoir peur est… »',['… la peur elle-même','… la guerre','… le communisme','… la Bourse'],'La phrase célèbre du discours inaugural de mars 1933.'],
- ['I','Que font l’AAA et la NIRA (1933) ?',['Elles régulent les prix agricoles et industriels et relancent l’emploi','Elles créent la Sécurité sociale','Elles ferment la Bourse','Elles augmentent les impôts des pauvres'],'Ce sont les deux grandes lois économiques de 1933.'],
- ['I','Que crée le Social Security Act de 1935 ?',['Retraites, indemnités chômage, aide aux handicapés','Les congés payés','La semaine de 40 heures','Le protectionnisme'],'C’est le début de l’État-providence américain.'],
- ['I','Pourquoi Roosevelt sépare-t-il les banques de dépôt et les banques d’affaires ?',['Pour que les difficultés des unes ne se propagent pas aux autres','Pour augmenter la spéculation','Pour sauver Hoover','Pour aider l’Europe'],'C’est l’axe « réglementer l’économie » du New Deal.'],
- ['I','Qu’est-ce qui relance définitivement l’économie américaine ?',['La Seconde Guerre mondiale (économie de guerre)','Le krach','Le Dust Bowl','Le protectionnisme'],'Le New Deal ne suffit pas seul : les énormes besoins en matériel de guerre font repartir l’économie.'],
- ['I','Dans le doc A (1936), qui critique le New Deal ?',['Le parti républicain','Le parti démocrate','Roosevelt lui-même','Les syndicats'],'C’est un programme électoral du camp adverse : à lire avec esprit critique.'],
- ['II','Qu’est-ce que le protectionnisme ?',['Protéger l’économie nationale en augmentant les droits de douane','Protéger les travailleurs avec des syndicats','Protéger les banques avec des prêts','Protéger la démocratie'],'Il réduit les échanges et aggrave la crise.'],
- ['II','En 1932, de combien reculent les exportations mondiales (par rapport à 1929) ?',['72 %','10 %','25 %','95 %'],'Chiffre de votre synthèse sur l’Amérique du Sud.'],
- ['II','Pourquoi les économies d’Amérique du Sud sont-elles fragiles ?',['Elles dépendent de l’exportation de produits bruts vers les USA','Elles sont trop industrialisées','Elles n’ont pas de banques','Elles sont en guerre'],'Le café au Brésil, l’étain en Bolivie, le sucre à Cuba…'],
- ['II','Qui prend le pouvoir au Brésil en 1930 ?',['Getúlio Vargas','Franco','José Félix Uriburu','Federico Pinedo'],'Uriburu, c’est en Argentine.'],
- ['II','Qu’est-ce que le plan Pinedo (Argentine, 1934) ?',['Un plan de planification et de réactivation de l’économie','Un coup d’État','Une loi protectionniste américaine','Un accord salarial'],'L’État fixe des objectifs de production et diversifie l’économie.'],
- ['II','Que réclame la pancarte du tableau argentin de 1934 ?',['« Du pain et du travail »','« Pain, paix, liberté »','« New Deal »','« Faillite ! Misère ! »'],'Elle illustre le chômage de masse en Amérique du Sud.'],
- ['II','Taux de chômage en Allemagne en 1932 ?',['25 %','5 %','15 %','40 %'],'Allemagne 25 %, Angleterre 22 %, USA 24 %.'],
- ['II','Quand la République espagnole est-elle proclamée ?',['14 avril 1931','24 octobre 1929','6 février 1934','7 juin 1936'],'Le roi Alphonse XIII s’exile.'],
- ['II','Quel roi d’Espagne s’exile en 1931 ?',['Alphonse XIII','Louis XVI','Philippe V','Juan Carlos'],'Alphonse XIII.'],
- ['II','Qu’est-ce que le « bienio noir » (1933-1935) ?',['Deux années de gouvernement de droite en Espagne','La crise en Allemagne','Le krach boursier','Deux années de grèves en France'],'Il suit le « bienio des réformes » (1931-1933).'],
+ ['I','Quelles sont les dates du krach boursier ?',['24, 28 et 29 octobre 1929','6 février 1934','7 et 8 juin 1936','1933-1935'],'Le jeudi 24 octobre 1929 est le « jeudi noir ».'],
+ ['I','Où a lieu le krach de 1929 ?',['À la Bourse de New York (Wall Street)','À Paris','À Londres','À Berlin'],'Wall Street est la Bourse de New York.'],
+ ['I','Qu’est-ce qu’une bulle spéculative ?',['Une hausse démesurée de la valeur de titres financiers, qui finit par éclater','Une baisse générale des prix','Une politique de droits de douane','Une alliance de partis de gauche'],'Définition de la fiche objectifs.'],
+ ['I','Qu’est-ce qu’un krach boursier ?',['Un effondrement brutal des cours de la Bourse','Une hausse des salaires','Une guerre civile','Une loi du New Deal'],'Définition de la fiche objectifs.'],
+ ['I','Pourquoi la bulle éclate-t-elle ?',['Les banques ont trop prêté à des gens qui ne peuvent pas rembourser','Le Dust Bowl','Le Front populaire','Roosevelt ferme la Bourse'],'Quand on s’en rend compte, tout le monde vend : c’est le krach.'],
+ ['I','Après le krach, que se passe-t-il en premier ?',['Les banques font faillite','Le New Deal commence','Les salaires augmentent','Le Front populaire gagne'],'Puis la demande chute, les entreprises ferment et le chômage explose : c’est la spirale.'],
+ ['I','Qui est président des USA au moment du krach, et que fait-il ?',['Hoover : il laisse faire le marché','Roosevelt : il lance le New Deal','Hoover : il lance le New Deal','Blum : il signe les accords Matignon'],'Hoover est libéral : il pense que l’État ne doit pas intervenir.'],
+ ['I','Taux de chômage aux USA en 1932 ?',['24 %','5 %','50 %','10 %'],'Allemagne 25 %, Angleterre 22 %, USA 24 %.'],
+ ['I','Qu’est-ce que le Dust Bowl (1933-1935) ?',['Des tempêtes de poussière qui ravagent les champs américains','Une loi du New Deal','Un krach boursier','Une émeute'],'Les fermiers ruinés partent vers l’Ouest.'],
+ ['I','Qu’est-ce que le New Deal ?',['La politique de Roosevelt où l’État intervient pour relancer l’économie','La politique de Hoover','Les accords signés en France en 1936','Une dictature'],'Grands travaux, aides sociales, contrôle des banques.'],
+ ['I','Quand Roosevelt est-il président ?',['1933-1945','1929-1933','1936-1938','1936-1975'],'1929-1933, c’est Hoover.'],
+ ['II','Comment la crise américaine se propage-t-elle au monde ?',['Les USA arrêtent d’acheter et rapatrient leur argent','Les USA déclarent la guerre','Grâce au Front populaire','Par le Dust Bowl'],'Les banques étrangères font faillite et le commerce s’effondre.'],
+ ['II','Qu’est-ce que le protectionnisme ?',['Augmenter les droits de douane pour protéger son économie','Protéger les ouvriers avec des congés payés','Protéger les banques','Une alliance de gauche'],'Il réduit les échanges et aggrave la crise.'],
+ ['II','Pourquoi l’Amérique du Sud est-elle si touchée ?',['Elle vit de l’exportation de produits agricoles vers les USA','Elle est très industrialisée','Elle est en guerre','Elle n’a pas de Bourse'],'Quand les USA n’achètent plus, c’est la ruine, puis des dictatures.'],
+ ['II','Taux de chômage en Allemagne en 1932 ?',['25 %','5 %','50 %','12 %'],'Allemagne 25 %, Angleterre 22 %, USA 24 %.'],
  ['II','Dates de la guerre civile espagnole ?',['1936-1939','1929-1933','1914-1918','1939-1945'],'Franco gagne et reste dictateur jusqu’en 1975.'],
- ['II','Pourquoi la crise touche-t-elle la France plus tardivement ?',['Grâce aux échanges avec son empire colonial','Parce qu’elle n’a pas de Bourse','Grâce au New Deal','Parce qu’elle est communiste'],'Le marché colonial la protège quelque temps.'],
- ['II','Qui organise la manifestation du 6 février 1934 ?',['Les ligues d’extrême droite','Le Front populaire','Les syndicats CGT','Les communistes'],'Une émeute antiparlementaire devant l’Assemblée nationale.'],
- ['II','Quel scandale précède le 6 février 1934 ?',['L’affaire Stavisky','L’affaire Dreyfus','Le Watergate','L’affaire Pinedo'],'Stavisky, un escroc lié à des politiques, est retrouvé mort le 8 janvier 1934.'],
- ['II','Quels partis forment le Front populaire en France ?',['Socialistes, communistes, radicaux','Républicains, démocrates','Ligues et radicaux','Communistes et monarchistes'],'Retenez B-T-D : Blum (SFIO), Thorez (PCF), Daladier (radicaux).'],
- ['II','Qui est le chef du gouvernement du Front populaire en 1936 ?',['Léon Blum','Édouard Daladier','Maurice Thorez','Franklin D. Roosevelt'],'Léon Blum, socialiste, président du Conseil.'],
- ['II','Quand sont signés les accords Matignon ?',['7-8 juin 1936','20-21 juin 1936','6 février 1934','3 mai 1936'],'Les 20-21 juin, ce sont les lois sur les congés payés et les 40 heures.'],
- ['II','Qui signe les accords Matignon ?',['Le patronat (CGPF) et les syndicats (CGT)','Blum et Roosevelt','Franco et la République','Les ligues et la police'],'En présence de Léon Blum.'],
- ['II','De combien augmentent les salaires avec les accords Matignon ?',['De 7 à 15 %','De 1 à 2 %','De 50 %','Ils baissent'],'15 % pour les salaires les plus bas, 7 % pour les plus élevés.'],
- ['II','Combien de jours de congés payés sont accordés en 1936 ?',['15 jours','5 semaines','30 jours','Aucun'],'15 jours, dont 12 jours ouvrables.'],
- ['II','Que dit l’affiche de la droite contre les accords Matignon ?',['« Faillite ! Misère ! » : la semaine de 40 heures va ruiner les exportations','« Vive les congés payés »','« Du pain et du travail »','« New Deal »'],'La droite critique le coût des réformes.'],
- ['II','Pourquoi les réformes du Front populaire n’ont-elles pas l’effet espéré ?',['L’inflation annule les hausses de salaires et la production stagne','Il n’y a plus d’importations','Les ouvriers refusent les congés','Roosevelt s’y oppose'],'Attention : « il n’y a plus d’importations » est une erreur fréquente.'],
- ['II','Que sont les « grèves joyeuses » ?',['Des grèves massives avec occupations d’usines en mai-juin 1936','Des fêtes pour la fin de la crise','Des manifestations des ligues','Des grèves aux USA'],'Elles poussent le patronat à négocier les accords Matignon.'],
- ['II','Quand Hitler devient-il chancelier ?',['30 janvier 1933','6 février 1934','24 octobre 1929','1936'],'Bonus : la crise favorise la montée du nazisme.']
+ ['II','Qui est dictateur en Espagne de 1936 à 1975 ?',['Franco','Léon Blum','Hoover','Roosevelt'],'Un général d’extrême droite.'],
+ ['II','Que se passe-t-il le 6 février 1934 ?',['Des émeutes de l’extrême droite à Paris','Le krach boursier','Les accords Matignon','L’élection de Roosevelt'],'La gauche a peur du fascisme et s’unit : c’est le Front populaire.'],
+ ['II','Qu’est-ce que le Front populaire ?',['Une alliance des partis de gauche','Un parti d’extrême droite','Une loi américaine','Une banque'],'Au pouvoir en France de 1936 à 1938.'],
+ ['II','Qui dirige le gouvernement du Front populaire ?',['Léon Blum','Franco','Roosevelt','Hoover'],'Léon Blum, socialiste.'],
+ ['II','Quand sont signés les accords Matignon ?',['7 et 8 juin 1936','24 octobre 1929','6 février 1934','1933'],'Ils augmentent les salaires et donnent plus de droits aux ouvriers.'],
+ ['II','Qu’obtiennent les ouvriers en 1936 ?',['15 jours de congés payés et la semaine de 40 heures','Le New Deal','La fin du chômage','Le droit de vote'],'Avec la hausse des salaires des accords Matignon.']
 ];
 const partsOn=new Set(['I','II']);
 $('#quiz-parts').innerHTML=[['I','Partie I · USA'],['II','Partie II · le monde']].map(([k,v])=>`<button class="chip" aria-pressed="true" data-p="${k}">${v}</button>`).join('');
@@ -1015,8 +950,8 @@ function qAnswer(choice){
   $('#qnext').onclick=()=>{qz.i++;qz.i<qz.list.length?qDraw():qEnd()};$('#qnext').focus();
 }
 function qEnd(){
-  const s=qz.score,n=qz.list.length,best=store.get('best',0);if(s>best)store.set('best',s);
-  const msg=s>=11?'Prêt pour le contrôle.':s>=8?'Solide ! Revoyez les explications ratées.':s>=5?'On y est presque : un tour de flashcards et on recommence.':'Relisez le cours (onglet Cours) puis recommencez.';
+  const s=qz.score,n=qz.list.length,best=store.get('best2',null);if(!best||s/n>best[0]/best[1])store.set('best2',[s,n]);
+  const msg=s>=n-1?'Prêt pour le contrôle.':s>=n*0.66?'Solide ! Revoyez les explications ratées.':s>=n*0.4?'On y est presque : un tour de flashcards et on recommence.':'Relisez le cours (onglet Cours) puis recommencez.';
   $('#quiz-box').innerHTML=`<div class="eyebrow">Résultat</div><div class="scorebig">${s}/${n}</div><p style="font-weight:700">${msg}</p><div class="row"><button class="btn blue" id="qagain">Rejouer</button><button class="btn alt" id="qback">Changer de parties</button></div>`;
   $('#qagain').onclick=()=>$('#quiz-go').click();$('#qback').onclick=()=>{$('#quiz-box').hidden=true;$('#quiz-start').hidden=false};stats();
 }
@@ -1064,16 +999,14 @@ document.addEventListener('keydown',e=>{if(!dl||$('#t-duel').hidden||$('#duel-ar
 
 /* ---------- ORAL ---------- */
 const ORAL=[
- ['Quel processus économique explique le krach boursier de 1929 ?',['années 1920 / essor','crédit','banques sans précaution','10 %','non solvables','bulle spéculative','24 octobre 1929','tout le monde vend']],
- ['Comment le krach boursier se transforme-t-il en crise économique ?',['faillite des banques','chute de la demande','déflation','fermeture des entreprises','chômage de masse','pauvreté','spirale / cercle vicieux','24 % en 1932']],
- ['Comment Roosevelt tente-t-il de résorber la crise dans le cadre du New Deal ?',['1933','interventionnisme','dépense publique','grands travaux','AAA / NIRA','syndicats','Social Security 1935','contrôle des banques']],
- ['Comment la crise atteint-elle le reste du monde ?',['arrêt des achats','arrêt des investissements','rapatriement des capitaux','faillite des banques étrangères','protectionnisme','droits de douane','−72 % exportations']],
- ['Quelles sont les conséquences de la crise en Amérique du Sud ?',['produits bruts','dépendance aux USA','chômage de masse','coups d’État','Vargas','Uriburu','régimes autoritaires','plan Pinedo / planification']],
- ['Quelles sont les conséquences de la crise en Europe ?',['chômage 25 % Allemagne','22 % Angleterre','République espagnole 1931','Franco','guerre civile 1936-1939','Stavisky','6 février 1934','Front populaire']],
- ['Pourquoi le Front populaire est-il élu en 1936, et quelles mesures prend-il ?',['crise économique','peur du fascisme','socialistes-communistes-radicaux','Léon Blum','grèves joyeuses','accords Matignon','salaires +7 à 15 %','congés payés','40 heures']],
- ['Comparez le New Deal et le Front populaire.',['intervention de l’État','relancer la consommation','1933 vs 1936','protéger les travailleurs','critiques de la droite','résultats limités','démocraties']],
- ['Comparez Hoover et Roosevelt face à la crise.',['républicain / démocrate','libéralisme / interventionnisme','laisser-faire','New Deal','1929-1933 / 1933-1945','chômage 24 %']],
- ['Comparez les réponses à la crise en Amérique du Sud et aux USA.',['autoritaire vs démocratique','coups d’État','usage de la force','planification','New Deal','l’État intervient dans les deux cas']]
+ ['Quel processus économique explique le krach boursier de 1929 ?',['années 1920','crédit','banques prêtent trop','gens qui ne remboursent pas','bulle spéculative','tout le monde vend','24-29 octobre 1929']],
+ ['Comment le krach boursier se transforme-t-il en crise économique ?',['faillite des banques','on n’achète plus','entreprises ferment','chômage','pauvreté','spirale']],
+ ['Comment Roosevelt tente-t-il de résorber la crise dans le cadre du New Deal ?',['1933','l’État intervient','grands travaux','emplois','aides sociales','contrôle des banques']],
+ ['Comment la crise atteint-elle le reste du monde ?',['USA n’achètent plus','rapatrient leur argent','banques étrangères en faillite','protectionnisme','commerce s’effondre']],
+ ['Quelles sont les conséquences de la crise en Amérique du Sud ?',['exportations agricoles','dépendance aux USA','chômage','coups d’État','dictatures']],
+ ['Quelles sont les conséquences de la crise en Europe ?',['chômage 1932','Espagne','guerre civile 1936-1939','Franco','6 février 1934','Front populaire']],
+ ['Pourquoi le Front populaire est-il élu en 1936, et quelles mesures prend-il ?',['crise','peur du fascisme','alliance de gauche','Léon Blum','accords Matignon 7-8 juin','salaires','congés payés','40 heures']],
+ ['Comparez Hoover et Roosevelt face à la crise.',['Hoover laisse faire','Roosevelt intervient','New Deal','1929-1933 / 1933-1945']]
 ];
 let orI=0,orT=null,orLeft=90;
 function oralDraw(){
@@ -1101,7 +1034,7 @@ $$('[data-ck]').forEach(c=>c.onchange=()=>{const i=+c.dataset.ck;chk=c.checked?[
 function stats(){
   const k=fcKnown.size;$('#st-cards').textContent=`${k}/${CARDS.length}`;
   $('#pill').textContent=`${k} carte${k>1?'s':''} maîtrisée${k>1?'s':''}`;
-  const b=store.get('best',null);$('#st-quiz').textContent=b==null?'–':`${b}/12`;
+  const b=store.get('best2',null);$('#st-quiz').textContent=b?`${b[0]}/${b[1]}`:'–';
   $('#st-plan').textContent=`${planDone.length}/${PLAN.length}`;
   $('#st-duel').textContent=store.get('duel','–');
 }
