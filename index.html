@@ -171,6 +171,21 @@ th{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--mu
 .fc-face .a{font-size:clamp(.98rem,3vw,1.12rem);line-height:1.45}
 .fc-face .hint{font-size:.78rem;color:var(--muted)}
 .fc-face.back .hint{color:#aab4d6}
+.fc-zone{position:absolute;top:0;left:0;right:0;padding:8px;font-family:var(--display);font-weight:900;font-size:1.15rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--fzc,transparent)}
+.fc-zone:empty{display:none}
+.fc .fc-face.front{border-top:0;background:var(--fzs,var(--card))}
+.fc .fc-face.back{background:var(--fzd,var(--ink));border-color:var(--fzd,var(--ink))}
+.fc-face{padding-top:48px}
+.fz-us{--fzc:#2A56E0;--fzs:#EEF2FF;--fzd:#1C3A9E}
+.fz-monde{--fzc:#6B7394;--fzs:#F2F3F8;--fzd:#3E4566}
+.fz-am{--fzc:#169C6E;--fzs:#E8F8F1;--fzd:#0E6A4A}
+.fz-es{--fzc:#C98A00;--fzs:#FFF6DE;--fzd:#7A5400}
+.fz-fr{--fzc:#E0473F;--fzs:#FDEDEC;--fzd:#9C2A24}
+#fc-cats .chip.zc-us[aria-pressed="true"]{background:#2A56E0;border-color:#2A56E0}
+#fc-cats .chip.zc-monde[aria-pressed="true"]{background:#6B7394;border-color:#6B7394}
+#fc-cats .chip.zc-am[aria-pressed="true"]{background:#169C6E;border-color:#169C6E}
+#fc-cats .chip.zc-es[aria-pressed="true"]{background:#C98A00;border-color:#C98A00}
+#fc-cats .chip.zc-fr[aria-pressed="true"]{background:#E0473F;border-color:#E0473F}
 .fc-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .bar{height:10px;background:var(--line);border-radius:10px;overflow:hidden;width:min(560px,100%)}
 .bar>i{display:block;height:100%;background:var(--green);border-radius:10px;transition:width .3s}
@@ -558,7 +573,7 @@ footer{padding:30px 16px;text-align:center;color:var(--muted);font-size:.85rem}
   <div class="card stack">
     <div class="eyebrow">Mémorisation active</div>
     <h2>Flashcards</h2>
-    <p class="muted">Touchez la carte pour la retourner. Répondez à voix haute <b>avant</b> de retourner, puis soyez honnêtes : « Je savais » la retire du paquet, « À revoir » la renvoie à la fin du tour. Au clavier : espace pour retourner, → pour « je savais », ← pour « à revoir ».</p>
+    <p class="muted">Choisissez une zone (ou « Toutes » : les cartes arrivent zone par zone, États-Unis → Monde → Amérique du Sud → Espagne → France). Touchez la carte pour la retourner. Répondez à voix haute <b>avant</b> de retourner, puis soyez honnêtes : « Je savais » la retire du paquet, « À revoir » la renvoie à la fin du tour. Au clavier : espace pour retourner, → pour « je savais », ← pour « à revoir ».</p>
     <div class="filters" id="fc-cats"></div>
     <div class="row"><label class="row" style="gap:6px;font-weight:700;font-size:.9rem"><input type="checkbox" id="fc-rev"> Mode inversé (réponse → question)</label><button class="btn alt" id="fc-reset" style="margin-left:auto">Remettre tout à zéro</button></div>
   </div>
@@ -566,8 +581,8 @@ footer{padding:30px 16px;text-align:center;color:var(--muted);font-size:.85rem}
     <div class="bar"><i id="fc-bar" style="width:0%"></i></div>
     <div class="muted" id="fc-count" style="font-weight:700"></div>
     <button class="fc" id="fc" aria-label="Retourner la carte"><div class="fc-inner">
-      <div class="fc-face front"><span class="tag" id="fc-tag"></span><div class="q" id="fc-q"></div><div class="hint">toucher pour retourner</div></div>
-      <div class="fc-face back"><div class="a" id="fc-a"></div><div class="hint">alors, vous saviez ?</div></div>
+      <div class="fc-face front"><div class="fc-zone" id="fc-zone"></div><span class="tag" id="fc-tag"></span><div class="q" id="fc-q"></div><div class="hint">toucher pour retourner</div></div>
+      <div class="fc-face back"><div class="fc-zone" id="fc-zone2"></div><div class="a" id="fc-a"></div><div class="hint">alors, vous saviez ?</div></div>
     </div></button>
     <div class="muted" id="fc-help" style="font-size:.9rem;text-align:center"></div>
     <div class="fc-actions"><button class="btn red" id="fc-no" disabled>À revoir</button><button class="btn green" id="fc-yes" disabled>Je savais</button></div>
@@ -824,42 +839,46 @@ $('#ord-matignon').onclick=()=>ordStart(['Affaire Stavisky (janv. 1934)','Émeut
 
 /* ---------- FLASHCARDS ---------- */
 const CATS={date:'Dates',perso:'Personnages',notion:'Notions',chiffre:'Chiffres',meca:'Expliquer'};
+const ZONESFC={us:'États-Unis',monde:'Le monde',am:'Amérique du Sud',es:'Espagne',fr:'France'};
+const ZORDER=['us','monde','am','es','fr'];
 const CARDS=[
- ['date','24, 28 et 29 octobre 1929','Le krach boursier de Wall Street (New York). Le 24 = le « jeudi noir ».'],
- ['date','1933-1935','Le Dust Bowl : tempêtes de poussière qui ravagent les champs du centre des USA.'],
- ['date','1933-1945','Franklin D. Roosevelt, président des USA. Il lance le New Deal.'],
- ['date','1932 : taux de chômage','Allemagne 25 % · Angleterre 22 % · USA 24 %.'],
- ['date','6 février 1934','Émeutes des ligues d’extrême droite (fascistes, antiparlementaires) à Paris.'],
- ['date','1936-1939','Guerre civile espagnole.'],
- ['date','1936-1975','Franco, dictateur espagnol.'],
- ['date','1936-1938','Le Front populaire au pouvoir en France.'],
- ['date','7 et 8 juin 1936','Les accords Matignon.'],
- ['perso','Herbert Hoover','Président des USA au moment du krach (1929-1933). Il ne fait rien : il laisse faire le marché (libéralisme).'],
- ['perso','Franklin D. Roosevelt','Président des USA (1933-1945). Il lance le New Deal.'],
- ['perso','Léon Blum','Socialiste, président du Conseil (chef du gouvernement) du Front populaire en 1936.'],
- ['perso','Franco','Général espagnol : guerre civile (1936-1939), puis dictateur jusqu’en 1975.'],
- ['notion','Bulle spéculative','Hausse démesurée de la valeur de certains titres financiers, qui finit souvent par éclater lors d’un krach boursier.'],
- ['notion','Krach boursier','Effondrement brutal des cours de la Bourse, qui s’étend aux autres pays car les marchés financiers sont reliés entre eux.'],
- ['notion','New Deal','Politique interventionniste de Roosevelt pour soutenir les plus pauvres, lutter contre le chômage et relancer l’économie américaine.'],
- ['notion','Protectionnisme','Protéger l’économie nationale de la concurrence étrangère en augmentant les droits de douane et en réduisant les échanges.'],
- ['notion','Front populaire','Alliance des partis de gauche pour obtenir la majorité à l’Assemblée et gouverner.'],
- ['meca','Quel processus explique le krach de 1929 ?','Dans les années 1920, tout le monde emprunte. Les banques prêtent sans précaution, même à des gens qui ne pourront pas rembourser : c’est la bulle. Quand on s’en rend compte, tout le monde vend : c’est le krach.'],
- ['meca','Comment le krach devient-il une crise économique ?','C’est la spirale : faillite des banques → plus personne n’achète → les entreprises ferment → chômage → pauvreté → on achète encore moins.'],
- ['meca','Que fait Roosevelt avec le New Deal ?','L’État dépense pour relancer l’économie : grands travaux pour créer des emplois, aides sociales (retraites, chômage) et contrôle des banques.'],
- ['meca','Comment la crise atteint-elle le reste du monde ?','Les USA arrêtent d’acheter et rapatrient leur argent placé à l’étranger. Tous les pays se ferment (protectionnisme), et le commerce mondial s’effondre.'],
- ['meca','Conséquences de la crise en Amérique du Sud ?','Ces pays vivent de l’exportation de produits agricoles vers les USA. Sans acheteurs : chômage de masse, puis coups d’État et dictatures.'],
- ['meca','Conséquences de la crise en Europe ?','Chômage massif. En Espagne : guerre civile, puis dictature de Franco. En France : émeutes du 6 février 1934, puis victoire du Front populaire.'],
- ['meca','Pourquoi le Front populaire est-il élu en 1936, et que fait-il ?','Élu à cause de la crise et de la peur du fascisme (6 février 1934). Mesures : accords Matignon (hausse des salaires), 15 jours de congés payés, semaine de 40 heures.']
+ ['date','24, 28 et 29 octobre 1929','Le krach boursier de Wall Street (New York). Le 24 = le « jeudi noir ».','us'],
+ ['date','1933-1935','Le Dust Bowl : tempêtes de poussière qui ravagent les champs du centre des USA.','us'],
+ ['date','1933-1945','Franklin D. Roosevelt, président des USA. Il lance le New Deal.','us'],
+ ['perso','Herbert Hoover','Président des USA au moment du krach (1929-1933). Il ne fait rien : il laisse faire le marché (libéralisme).','us'],
+ ['perso','Franklin D. Roosevelt','Président des USA (1933-1945). Il lance le New Deal.','us'],
+ ['notion','Bulle spéculative','Hausse démesurée de la valeur de certains titres financiers, qui finit souvent par éclater lors d’un krach boursier.','us'],
+ ['notion','Krach boursier','Effondrement brutal des cours de la Bourse, qui s’étend aux autres pays car les marchés financiers sont reliés entre eux.','us'],
+ ['notion','New Deal','Politique interventionniste de Roosevelt pour soutenir les plus pauvres, lutter contre le chômage et relancer l’économie américaine.','us'],
+ ['meca','Quel processus explique le krach de 1929 ?','Dans les années 1920, tout le monde emprunte. Les banques prêtent sans précaution, même à des gens qui ne pourront pas rembourser : c’est la bulle. Quand on s’en rend compte, tout le monde vend : c’est le krach.','us'],
+ ['meca','Comment le krach devient-il une crise économique ?','C’est la spirale : faillite des banques → plus personne n’achète → les entreprises ferment → chômage → pauvreté → on achète encore moins.','us'],
+ ['meca','Que fait Roosevelt avec le New Deal ?','L’État dépense pour relancer l’économie : grands travaux pour créer des emplois, aides sociales (retraites, chômage) et contrôle des banques.','us'],
+ ['date','1932 : taux de chômage','Allemagne 25 % · Angleterre 22 % · USA 24 %.','monde'],
+ ['notion','Protectionnisme','Protéger l’économie nationale de la concurrence étrangère en augmentant les droits de douane et en réduisant les échanges.','monde'],
+ ['meca','Comment la crise atteint-elle le reste du monde ?','Les USA arrêtent d’acheter et rapatrient leur argent placé à l’étranger. Tous les pays se ferment (protectionnisme), et le commerce mondial s’effondre.','monde'],
+ ['meca','Pourquoi l’Amérique du Sud est-elle si touchée par la crise ?','Ces pays vivent de l’exportation de produits agricoles vers les USA. Quand les USA n’achètent plus, c’est la ruine : chômage de masse.','am'],
+ ['meca','Quelles conséquences politiques en Amérique du Sud ?','Les gouvernements sont renversés : coups d’État militaires et dictatures, qui promettent de sortir de la crise par la force.','am'],
+ ['meca','Comment l’Amérique du Sud lutte-t-elle contre la crise ?','Protectionnisme, planification (l’État fixe des objectifs de production) et développement de l’industrie pour ne plus dépendre de l’agriculture.','am'],
+ ['meca','Que provoque la crise en Espagne ?','La République (1931) n’arrive pas à régler la crise. Le Front populaire espagnol gagne en 1936, puis Franco mène un coup d’État : c’est la guerre civile.','es'],
+ ['date','1936-1939','Guerre civile espagnole.','es'],
+ ['date','1936-1975','Franco, dictateur espagnol.','es'],
+ ['perso','Franco','Général espagnol : guerre civile (1936-1939), puis dictateur jusqu’en 1975.','es'],
+ ['date','6 février 1934','Émeutes des ligues d’extrême droite (fascistes, antiparlementaires) à Paris.','fr'],
+ ['date','1936-1938','Le Front populaire au pouvoir en France.','fr'],
+ ['date','7 et 8 juin 1936','Les accords Matignon.','fr'],
+ ['perso','Léon Blum','Socialiste, président du Conseil (chef du gouvernement) du Front populaire en 1936.','fr'],
+ ['notion','Front populaire','Alliance des partis de gauche pour obtenir la majorité à l’Assemblée et gouverner.','fr'],
+ ['meca','Pourquoi le Front populaire est-il élu en 1936, et que fait-il ?','Élu à cause de la crise et de la peur du fascisme (6 février 1934). Mesures : accords Matignon (hausse des salaires), 15 jours de congés payés, semaine de 40 heures.','fr']
 ];
 CARDS.forEach((c,i)=>c.id=i);
-let fcKnown=new Set(store.get('known2',[])),fcCats=new Set(Object.keys(CATS)),fcDeck=[],fcCur=null;
-let fcCat=store.get('fccat','all');
-$('#fc-cats').innerHTML=[['all','Toutes']].concat(Object.entries(CATS)).map(([k,v])=>`<button class="chip" data-c="${k}">${v}</button>`).join('');
+let fcKnown=new Set(store.get('known3',[])),fcCats=new Set(Object.keys(CATS)),fcDeck=[],fcCur=null;
+let fcCat=store.get('fczone','all');if(fcCat!=='all'&&!ZONESFC[fcCat])fcCat='all';
+$('#fc-cats').innerHTML=[['all','Toutes (par zone)']].concat(ZORDER.map(z=>[z,ZONESFC[z]])).map(([k,v])=>`<button class="chip zc-${k}" data-c="${k}">${v}</button>`).join('');
 function fcChips(){$$('#fc-cats .chip').forEach(x=>x.setAttribute('aria-pressed',x.dataset.c===fcCat))}
-$$('#fc-cats .chip').forEach(c=>c.onclick=()=>{if(fcCat===c.dataset.c)return;fcCat=c.dataset.c;store.set('fccat',fcCat);fcChips();fcDeck=[];fcRender()});
+$$('#fc-cats .chip').forEach(c=>c.onclick=()=>{if(fcCat===c.dataset.c)return;fcCat=c.dataset.c;store.set('fczone',fcCat);fcChips();fcDeck=[];fcRender()});
 fcChips();
 let fcFlipped=false,fcRound=0,fcPos=0;
-function fcPool(){return CARDS.filter(c=>fcCat==='all'||c[0]===fcCat)}
+function fcPool(){return CARDS.filter(c=>fcCat==='all'||c[3]===fcCat)}
 function fcSetFlip(on,instant){
   fcFlipped=on;const inner=$('.fc-inner');
   if(instant){inner.classList.add('instant');$('#fc').classList.toggle('flip',on);void inner.offsetWidth;inner.classList.remove('instant')}
@@ -870,15 +889,15 @@ function fcSetFlip(on,instant){
 function fcRender(){
   const pool=fcPool(),todo=pool.filter(c=>!fcKnown.has(c.id));
   fcDeck=fcDeck.filter(c=>todo.includes(c));
-  if(!fcDeck.length&&todo.length){fcDeck=shuffle(todo);fcRound=fcDeck.length;fcPos=0}
+  if(!fcDeck.length&&todo.length){fcDeck=ZORDER.flatMap(z=>shuffle(todo.filter(c=>c[3]===z)));fcRound=fcDeck.length;fcPos=0}
   const done=pool.length-todo.length;
   $('#fc-bar').style.width=(pool.length?done/pool.length*100:0)+'%';
   $('#fc-count').textContent=`${done} / ${pool.length} maîtrisées · ${todo.length} à apprendre`;
   fcCur=fcDeck[0];
-  if(!fcCur){$('#fc-tag').className='tag t-chiffre';$('#fc-tag').textContent='Bravo';$('#fc-q').textContent='Paquet terminé !';$('#fc-q').style.fontSize='';$('#fc-q').style.fontFamily='';$('#fc-a').textContent='Choisissez une autre catégorie, activez le mode inversé, ou remettez à zéro pour refaire un tour.';fcSetFlip(false,true);stats();return}
+  if(!fcCur){$('#fc').className='fc';$('#fc-zone').textContent=$('#fc-zone2').textContent='';$('#fc-tag').className='tag t-chiffre';$('#fc-tag').textContent='Bravo';$('#fc-q').textContent='Paquet terminé !';$('#fc-q').style.fontSize='';$('#fc-q').style.fontFamily='';$('#fc-a').textContent='Choisissez une autre catégorie, activez le mode inversé, ou remettez à zéro pour refaire un tour.';fcSetFlip(false,true);stats();return}
   const rev=$('#fc-rev').checked;
   fcSetFlip(false,true);
-  $('#fc-tag').className='tag t-'+fcCur[0];$('#fc-tag').textContent=CATS[fcCur[0]]+(todo.length===1?' · dernière carte':'');
+  $('#fc').className='fc fz-'+fcCur[3];$('#fc-zone').textContent=$('#fc-zone2').textContent=ZONESFC[fcCur[3]];$('#fc-tag').className='tag t-'+fcCur[0];$('#fc-tag').textContent=CATS[fcCur[0]]+(todo.length===1?' · dernière carte':'');
   $('#fc-q').textContent=rev?fcCur[2]:fcCur[1];
   $('#fc-q').style.fontSize=rev?'clamp(1.05rem,3.4vw,1.3rem)':'';
   $('#fc-q').style.fontFamily=rev?'var(--body)':'';
@@ -888,7 +907,7 @@ function fcRender(){
 function fcAnswer(ok){
   if(!fcCur||!fcFlipped)return;
   const c=fcDeck.shift();
-  if(ok){fcKnown.add(c.id);store.set('known2',[...fcKnown])}else fcDeck.push(c);
+  if(ok){fcKnown.add(c.id);store.set('known3',[...fcKnown])}else fcDeck.push(c);
   fcRender();
 }
 $('#fc').onclick=()=>{if(fcCur)fcSetFlip(!fcFlipped)};
@@ -898,7 +917,7 @@ let fcResetArm=null;
 $('#fc-reset').onclick=()=>{
   if(!fcResetArm){$('#fc-reset').textContent='Sûr ? Toucher encore pour tout effacer';$('#fc-reset').classList.add('red');fcResetArm=setTimeout(()=>{fcResetArm=null;$('#fc-reset').textContent='Remettre tout à zéro';$('#fc-reset').classList.remove('red')},3000);return}
   clearTimeout(fcResetArm);fcResetArm=null;$('#fc-reset').textContent='Remettre tout à zéro';$('#fc-reset').classList.remove('red');
-  fcKnown=new Set();store.set('known2',[]);fcDeck=[];fcRender();toast('Paquet remis à zéro');
+  fcKnown=new Set();store.set('known3',[]);fcDeck=[];fcRender();toast('Paquet remis à zéro');
 };
 document.addEventListener('keydown',e=>{if($('#t-flash').hidden||e.target.tagName==='INPUT')return;if(e.code==='Space'){e.preventDefault();if(document.activeElement)document.activeElement.blur();$('#fc').click()}if(e.key==='ArrowRight')fcAnswer(true);if(e.key==='ArrowLeft')fcAnswer(false)});
 
