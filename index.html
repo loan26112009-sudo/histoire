@@ -19,7 +19,9 @@
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overscroll-behavior-y:contain}
+body{overscroll-behavior-y:contain}
+button,label,.fc{touch-action:manipulation}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;margin:0}
 button{font:inherit;color:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:6px}
@@ -161,6 +163,7 @@ th{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--mu
 .fc{width:min(560px,100%);aspect-ratio:1.55;max-width:100%;perspective:1400px;cursor:pointer;border:0;background:none;padding:0}
 .fc-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
 .fc.flip .fc-inner{transform:rotateY(180deg)}
+.fc-inner.instant{transition:none}
 @media (prefers-reduced-motion:reduce){.fc-inner{transition:none}}
 .fc-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;padding:22px;display:grid;align-content:center;justify-items:center;text-align:center;gap:10px;border:1px solid var(--line);background:var(--card);box-shadow:0 10px 30px -18px rgba(22,32,63,.45);overflow:auto}
 .fc-face.back{transform:rotateY(180deg);background:var(--ink);color:#fff;border-color:var(--ink)}
@@ -555,9 +558,9 @@ footer{padding:30px 16px;text-align:center;color:var(--muted);font-size:.85rem}
   <div class="card stack">
     <div class="eyebrow">Mémorisation active</div>
     <h2>Flashcards</h2>
-    <p class="muted">Touchez la carte pour la retourner. Répondez à voix haute <b>avant</b> de retourner, puis soyez honnêtes : « Je savais » la retire du paquet, « À revoir » la remet plus loin. Au clavier : espace pour retourner, → pour « je savais », ← pour « à revoir ».</p>
+    <p class="muted">Touchez la carte pour la retourner. Répondez à voix haute <b>avant</b> de retourner, puis soyez honnêtes : « Je savais » la retire du paquet, « À revoir » la renvoie à la fin du tour. Au clavier : espace pour retourner, → pour « je savais », ← pour « à revoir ».</p>
     <div class="filters" id="fc-cats"></div>
-    <div class="row"><label class="row" style="gap:6px;font-weight:700;font-size:.9rem"><input type="checkbox" id="fc-rev"> Mode inversé (réponse → question)</label><button class="btn alt" id="fc-reset">Remettre tout à zéro</button></div>
+    <div class="row"><label class="row" style="gap:6px;font-weight:700;font-size:.9rem"><input type="checkbox" id="fc-rev"> Mode inversé (réponse → question)</label><button class="btn alt" id="fc-reset" style="margin-left:auto">Remettre tout à zéro</button></div>
   </div>
   <div class="fc-area">
     <div class="bar"><i id="fc-bar" style="width:0%"></i></div>
@@ -566,7 +569,8 @@ footer{padding:30px 16px;text-align:center;color:var(--muted);font-size:.85rem}
       <div class="fc-face front"><span class="tag" id="fc-tag"></span><div class="q" id="fc-q"></div><div class="hint">toucher pour retourner</div></div>
       <div class="fc-face back"><div class="a" id="fc-a"></div><div class="hint">alors, vous saviez ?</div></div>
     </div></button>
-    <div class="fc-actions"><button class="btn red" id="fc-no">À revoir</button><button class="btn green" id="fc-yes">Je savais</button></div>
+    <div class="muted" id="fc-help" style="font-size:.9rem;text-align:center"></div>
+    <div class="fc-actions"><button class="btn red" id="fc-no" disabled>À revoir</button><button class="btn green" id="fc-yes" disabled>Je savais</button></div>
   </div>
 </section>
 
@@ -890,34 +894,54 @@ const CARDS=[
 ];
 CARDS.forEach((c,i)=>c.id=i);
 let fcKnown=new Set(store.get('known',[])),fcCats=new Set(Object.keys(CATS)),fcDeck=[],fcCur=null;
-$('#fc-cats').innerHTML=Object.entries(CATS).map(([k,v])=>`<button class="chip" aria-pressed="true" data-c="${k}">${v}</button>`).join('');
-$$('#fc-cats .chip').forEach(c=>c.onclick=()=>{const k=c.dataset.c;fcCats.has(k)&&fcCats.size>1?fcCats.delete(k):fcCats.add(k);$$('#fc-cats .chip').forEach(x=>x.setAttribute('aria-pressed',fcCats.has(x.dataset.c)));fcDeck=[];fcRender()});
-function fcPool(){return CARDS.filter(c=>fcCats.has(c[0]))}
+let fcCat=store.get('fccat','all');
+$('#fc-cats').innerHTML=[['all','Toutes']].concat(Object.entries(CATS)).map(([k,v])=>`<button class="chip" data-c="${k}">${v}</button>`).join('');
+function fcChips(){$$('#fc-cats .chip').forEach(x=>x.setAttribute('aria-pressed',x.dataset.c===fcCat))}
+$$('#fc-cats .chip').forEach(c=>c.onclick=()=>{if(fcCat===c.dataset.c)return;fcCat=c.dataset.c;store.set('fccat',fcCat);fcChips();fcDeck=[];fcRender()});
+fcChips();
+let fcFlipped=false,fcRound=0,fcPos=0;
+function fcPool(){return CARDS.filter(c=>fcCat==='all'||c[0]===fcCat)}
+function fcSetFlip(on,instant){
+  fcFlipped=on;const inner=$('.fc-inner');
+  if(instant){inner.classList.add('instant');$('#fc').classList.toggle('flip',on);void inner.offsetWidth;inner.classList.remove('instant')}
+  else $('#fc').classList.toggle('flip',on);
+  $('#fc-yes').disabled=$('#fc-no').disabled=!on||!fcCur;
+  $('#fc-help').textContent=!fcCur?'':on?'Soyez honnêtes :)':'Répondez à voix haute, puis touchez la carte pour vérifier.';
+}
 function fcRender(){
   const pool=fcPool(),todo=pool.filter(c=>!fcKnown.has(c.id));
-  if(!fcDeck.length||!fcDeck.every(c=>todo.includes(c)))fcDeck=shuffle(todo);
   fcDeck=fcDeck.filter(c=>todo.includes(c));
+  if(!fcDeck.length&&todo.length){fcDeck=shuffle(todo);fcRound=fcDeck.length;fcPos=0}
   const done=pool.length-todo.length;
   $('#fc-bar').style.width=(pool.length?done/pool.length*100:0)+'%';
-  $('#fc-count').textContent=`${done} / ${pool.length} maîtrisées · ${todo.length} restantes`;
-  $('#fc').classList.remove('flip');
+  $('#fc-count').textContent=`${done} / ${pool.length} maîtrisées · ${todo.length} à apprendre`;
   fcCur=fcDeck[0];
-  if(!fcCur){$('#fc-tag').className='tag t-chiffre';$('#fc-tag').textContent='Bravo';$('#fc-q').textContent='Paquet terminé !';$('#fc-a').textContent='Changez de catégorie, activez le mode inversé ou remettez tout à zéro pour un nouveau tour.';$('#fc-yes').disabled=$('#fc-no').disabled=true;stats();return}
-  $('#fc-yes').disabled=$('#fc-no').disabled=false;
+  if(!fcCur){$('#fc-tag').className='tag t-chiffre';$('#fc-tag').textContent='Bravo';$('#fc-q').textContent='Paquet terminé !';$('#fc-q').style.fontSize='';$('#fc-q').style.fontFamily='';$('#fc-a').textContent='Choisissez une autre catégorie, activez le mode inversé, ou remettez à zéro pour refaire un tour.';fcSetFlip(false,true);stats();return}
   const rev=$('#fc-rev').checked;
-  $('#fc-tag').className='tag t-'+fcCur[0];$('#fc-tag').textContent=CATS[fcCur[0]];
+  fcSetFlip(false,true);
+  $('#fc-tag').className='tag t-'+fcCur[0];$('#fc-tag').textContent=CATS[fcCur[0]]+(todo.length===1?' · dernière carte':'');
   $('#fc-q').textContent=rev?fcCur[2]:fcCur[1];
   $('#fc-q').style.fontSize=rev?'clamp(1.05rem,3.4vw,1.3rem)':'';
   $('#fc-q').style.fontFamily=rev?'var(--body)':'';
   $('#fc-a').innerHTML=rev?`<b style="font-family:var(--display);font-size:1.8rem">${esc(fcCur[1])}</b>`:esc(fcCur[2]);
   stats();
 }
-function fcAnswer(ok){if(!fcCur)return;if(ok){fcKnown.add(fcCur.id);store.set('known',[...fcKnown]);fcDeck.shift()}else{const c=fcDeck.shift();fcDeck.splice(Math.min(3,fcDeck.length),0,c)}fcRender()}
-$('#fc').onclick=()=>$('#fc').classList.toggle('flip');
+function fcAnswer(ok){
+  if(!fcCur||!fcFlipped)return;
+  const c=fcDeck.shift();
+  if(ok){fcKnown.add(c.id);store.set('known',[...fcKnown])}else fcDeck.push(c);
+  fcRender();
+}
+$('#fc').onclick=()=>{if(fcCur)fcSetFlip(!fcFlipped)};
 $('#fc-yes').onclick=()=>fcAnswer(true);$('#fc-no').onclick=()=>fcAnswer(false);
-$('#fc-rev').onchange=fcRender;
-$('#fc-reset').onclick=()=>{fcKnown=new Set();store.set('known',[]);fcDeck=[];fcRender();toast('Paquet remis à zéro')};
-document.addEventListener('keydown',e=>{if($('#t-flash').hidden||e.target.tagName==='INPUT')return;if(e.code==='Space'){e.preventDefault();$('#fc').classList.toggle('flip')}if(e.key==='ArrowRight')fcAnswer(true);if(e.key==='ArrowLeft')fcAnswer(false)});
+$('#fc-rev').onchange=()=>fcRender();
+let fcResetArm=null;
+$('#fc-reset').onclick=()=>{
+  if(!fcResetArm){$('#fc-reset').textContent='Sûr ? Toucher encore pour tout effacer';$('#fc-reset').classList.add('red');fcResetArm=setTimeout(()=>{fcResetArm=null;$('#fc-reset').textContent='Remettre tout à zéro';$('#fc-reset').classList.remove('red')},3000);return}
+  clearTimeout(fcResetArm);fcResetArm=null;$('#fc-reset').textContent='Remettre tout à zéro';$('#fc-reset').classList.remove('red');
+  fcKnown=new Set();store.set('known',[]);fcDeck=[];fcRender();toast('Paquet remis à zéro');
+};
+document.addEventListener('keydown',e=>{if($('#t-flash').hidden||e.target.tagName==='INPUT')return;if(e.code==='Space'){e.preventDefault();if(document.activeElement)document.activeElement.blur();$('#fc').click()}if(e.key==='ArrowRight')fcAnswer(true);if(e.key==='ArrowLeft')fcAnswer(false)});
 
 /* ---------- QUESTIONS (quiz + duel) ---------- */
 const QS=[
